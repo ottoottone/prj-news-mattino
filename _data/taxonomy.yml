@@ -1,0 +1,26 @@
+themes:
+  - id: politica
+    title: Politica e istituzioni
+    description: Governo, Bundestag e democrazia.
+    categories: [Politica]
+  - id: economia
+    title: Economia e lavoro
+    description: Imprese, energia, lavoro e innovazione.
+    categories: [Economia]
+  - id: societa
+    title: Società e vita quotidiana
+    description: Casa, servizi, scuola e comunità.
+    categories: [Società]
+  - id: europa
+    title: Germania in Europa
+    description: Il ruolo tedesco nell’Unione e nel mondo.
+    categories: [Europa]
+  - id: cultura
+    title: Cultura e idee
+    description: Cultura, memoria e dibattito pubblico.
+    categories: [Cultura]
+
+tags:
+  - people/places: germania, berlino, monaco, amburgo, europa
+  - topics: politica, economia, lavoro, energia, societa, casa, europa
+  - formats: briefing, analisi, dati

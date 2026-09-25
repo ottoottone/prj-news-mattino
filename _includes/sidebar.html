@@ -1,0 +1,10 @@
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-item sidebar-intro">
+    <p class="eyebrow">Briefing · 07:30</p>
+    <p>{{ site.description }}</p>
+  </div>
+  <nav class="sidebar-nav" role="menu" aria-label="Navigazione principale">
+    {% for item in site.sidebar.items %}<a class="sidebar-nav-item{% if page.url == item.url %} active{% endif %}" role="menuitem" tabindex="{% if forloop.first %}0{% else %}-1{% endif %}" href="{{ item.url | relative_url }}">{{ item.title }}</a>{% endfor %}
+  </nav>
+  <div class="sidebar-item sidebar-note"><p>Una lettura indipendente per orientarsi tra Italia e Germania.</p></div>
+</aside>

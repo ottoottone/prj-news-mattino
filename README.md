@@ -1,21 +1,23 @@
-# prj-news-mattino
+# Germania, in breve
 
-Private project repository for the Signal group `prj-news-mattino`.
+Sito Jekyll in italiano per il briefing mattutino sulla Germania.
 
-## TL;DR
+## Stato
 
-Project intake is in progress. The project agent will update this section after the intent-definition interview.
+La prima implementazione usa il tema open-source [Nord Newsletter](https://github.com/systemhalted/jekyll-theme-nord-newsletter) come base locale e aggiunge un livello editoriale italiano dedicato al progetto.
 
-## Project notes
+## Sviluppo locale
 
-- [Decisions](notes/decisions.md) — accepted project decisions and rationale
-- [Agent preferences](notes/agent-preferences.md) — behavior preferences and feedback
-- [Ideas to try](notes/ideas.md) — experiments and follow-ups
+```sh
+bundle install
+bundle exec jekyll serve --livereload
+```
 
-## Research
+Apri `http://127.0.0.1:4000`.
 
-Research is added only when performed. Each research deliverable is stored as `research/<topic>.md` and linked here.
+## Struttura editoriale
 
-## Working agreement
-
-Every project agent must read this README before beginning work, update it when a linked artifact changes, and keep its TL;DR current.
+- `collections/_newsletter/` contiene le edizioni quotidiane.
+- `_data/taxonomy.yml` definisce i temi.
+- `assets/css/briefing.css` contiene l’identità visiva del briefing.
+- `notes/implementation-queue.md` registra le 25 migliorie e il loro stato.

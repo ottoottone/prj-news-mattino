@@ -1,0 +1,8 @@
+---
+layout: page
+title: Etichette
+description: "Naviga le edizioni per parola chiave."
+permalink: /tags/
+---
+
+<p class="eyebrow">Parole chiave</p><h1>Cerca per tema.</h1><ul class="tag-box inline">{% for tag in site.tags %}{% assign tag_id = tag[0] | slugify %}<li><a href="#{{ tag_id }}">{{ tag[0] }}</a> <span>({{ tag[1].size }})</span></li>{% endfor %}</ul>{% for tag in site.tags %}{% assign tag_id = tag[0] | slugify %}<details id="{{ tag_id }}" class="archive-year"><summary class="archive-year-summary"><span class="archive-year-title">{{ tag[0] }}</span><span class="archive-year-count">({{ tag[1].size }})</span></summary><ul class="archive-posts">{% for issue in tag[1] %}<li class="archive-post"><a class="archive-post-title" href="{{ issue.url | relative_url }}">{{ issue.title }}</a></li>{% endfor %}</ul></details>{% endfor %}

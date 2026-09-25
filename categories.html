@@ -1,0 +1,8 @@
+---
+layout: page
+title: Temi
+description: "Le edizioni organizzate per tema."
+permalink: /categories/
+---
+
+<p class="eyebrow">Naviga per argomento</p><h1>Le lenti del briefing.</h1><div class="principles-grid">{% for theme in site.data.taxonomy.themes %}<article id="{{ theme.categories.first | slugify }}"><span class="principle-number">{{ forloop.index | prepend: '0' }}</span><h2>{{ theme.title }}</h2><p>{{ theme.description }}</p></article>{% endfor %}</div>

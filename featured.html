@@ -1,0 +1,8 @@
+---
+layout: page
+permalink: /featured/
+title: Scelti dalla redazione
+description: "I punti di partenza per capire la Germania."
+---
+
+<section class="featured-hero"><p class="eyebrow">Il punto di partenza</p><h1>Le storie da non perdere.</h1><p class="briefing-hero-lede">Le edizioni e gli approfondimenti che aiutano a leggere il quadro generale.</p></section><ul class="post-feed">{% for issue in site.newsletter limit: 5 %}{% include post-list-item.html post=issue %}{% endfor %}</ul>

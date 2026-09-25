@@ -1,0 +1,75 @@
+title: Germania, in breve
+tagline: Il briefing mattutino in italiano
+description: Una sintesi chiara e documentata delle notizie più importanti dalla Germania.
+url: https://ottoottone.github.io/prj-news-mattino
+baseurl: /prj-news-mattino
+lang: it-IT
+locale: it_IT
+exclude:
+  - _site
+  - vendor
+  - lib
+  - notes
+  - Gemfile.lock
+
+theme: jekyll-theme-nord-newsletter
+paginate: 8
+paginate_path: "/pagina:num"
+permalink: /:year/:month/:day/:title/
+timezone: Europe/Berlin
+
+collections_dir: collections
+collections:
+  emacs:
+    output: true
+  newsletter:
+    output: true
+
+defaults:
+  - scope: { path: "", type: "posts" }
+    values: { layout: post, lang: it }
+  - scope: { path: "", type: "newsletter" }
+    values: { layout: newsletter, lang: it }
+
+author:
+  name: Germania, in breve
+  email: briefing@example.com
+  avatar: /assets/favicon.svg
+
+markdown: kramdown
+highlighter: rouge
+plugins:
+  - jekyll-paginate
+  - jekyll-gist
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-toc
+
+newsletter_cta:
+  title: il briefing mattutino
+  lede: Ricevi una sintesi essenziale della Germania, in italiano.
+  path: /newsletter/
+  feed_path: /feed.xml
+  footer_blurb: Un briefing chiaro, utile e documentato per iniziare la giornata.
+
+search:
+  suggestions:
+    - politica tedesca
+    - economia
+    - Berlino
+    - lavoro
+    - Europa
+
+sidebar:
+  items:
+    - title: Oggi
+      url: "/"
+    - title: Archivio
+      url: "/archivio/"
+    - title: Temi
+      url: "/temi/"
+    - title: Come funziona
+      url: "/come-leggere/"
+    - title: Il progetto
+      url: "/about/"

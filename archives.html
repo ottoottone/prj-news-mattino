@@ -1,0 +1,7 @@
+---
+layout: page
+title: Archivio completo
+permalink: /archives/
+---
+
+<p class="eyebrow">Tutte le edizioni</p><h1>Il briefing, giorno dopo giorno.</h1><ul class="post-feed archive-feed">{% for issue in site.newsletter reversed %}{% include post-list-item.html post=issue %}{% endfor %}</ul>
