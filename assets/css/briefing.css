@@ -156,4 +156,21 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .watch-today, .theme-nord-dark .sources-section { border-color:#6d879a; }
 .theme-nord-dark .watch-note { border-left-color:#e8c76c; }
 
+/* Rhine Window identity: water as a precise, responsive brand mark. */
+:root { --rhine-navy:#102a43; --rhine-blue:#2868c7; --rhine-light:#72d5f2; --rhine-yellow:#e7ef61; }
+.masthead-title { display:flex; align-items:center; gap:.75rem; }
+.masthead-mark { display:inline-flex; width:1.55rem; height:2rem; flex:0 0 auto; color:var(--rhine-light); transition:transform .2s ease, color .2s ease; }
+.masthead-mark svg { width:100%; height:100%; overflow:visible; }
+.masthead-mark:hover { color:#4fc5ec; transform:translateY(-2px) rotate(-4deg); }
+.masthead-wordmark { position:relative; }
+.masthead-wordmark::after { content:""; display:block; width:2.4rem; height:3px; margin-top:.26rem; background:var(--rhine-light); border-radius:0 2px 2px 0; }
+.content-first-header, .newsletter-issue-header { position:relative; overflow:hidden; }
+.content-first-header::after, .newsletter-issue-header::after { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.25rem; width:4.8rem; height:6.1rem; background:var(--rhine-light); clip-path:polygon(50% 0,100% 48%,92% 72%,76% 91%,50% 100%,24% 91%,8% 72%,0 48%); opacity:.92; filter:drop-shadow(.5rem .5rem 0 var(--rhine-blue)); pointer-events:none; }
+.content-first-header::before, .newsletter-issue-header::before { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.25rem; width:5.7rem; height:7rem; border:1px solid color-mix(in srgb,var(--rhine-blue) 35%,transparent); border-radius:1.3rem 1.3rem 0 1.3rem; transform:rotate(-7deg); pointer-events:none; }
+.briefing-issue-header { background:#eaf5f7; border:1px solid #c9e5eb; border-radius:1.3rem 1.3rem 0 1.3rem; }
+.theme-nord-dark .masthead-mark { color:#8fe4ff; }
+.theme-nord-dark .masthead-wordmark::after { background:#8fe4ff; }
+.theme-nord-dark .content-first-header::after, .theme-nord-dark .newsletter-issue-header::after { background:#72d5f2; filter:drop-shadow(.5rem .5rem 0 #2868c7); }
+@media (max-width:700px) { .masthead-title { gap:.55rem; } .masthead-mark { width:1.25rem; height:1.65rem; } .content-first-header::after, .newsletter-issue-header::after { width:3.2rem; height:4.1rem; right:1rem; top:1rem; } .content-first-header::before, .newsletter-issue-header::before { width:4rem; height:5rem; right:.7rem; top:.8rem; } }
+
 
