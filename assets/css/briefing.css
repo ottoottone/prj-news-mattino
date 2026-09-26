@@ -159,7 +159,7 @@ body { background:#f7f7f5; color:#202b35; }
 .more-to-know { margin-top:1.15rem; padding-top:.7rem; }
 .more-to-know summary { display:inline-flex; align-items:center; gap:.42rem; color:#1d5d91; cursor:pointer; font-size:.78rem; font-weight:800; letter-spacing:.06em; list-style:none; }
 .more-to-know summary::-webkit-details-marker { display:none; }
-.more-to-know summary::before { content:""; display:inline-block; width:.72rem; height:.92rem; background:#72d5f2; border-radius:50% 50% 50% 0; transform:rotate(-45deg); box-shadow:2px 2px 0 #2868c7; }
+.more-to-know summary::before { content:"💧"; display:inline-block; width:auto; height:auto; font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; font-size:.9rem; line-height:1; transform:none; box-shadow:none; }
 .more-to-know summary::after { content:"＋"; display:inline-flex; align-items:center; justify-content:center; width:1.1rem; height:1.1rem; border:1px solid currentColor; border-radius:50%; font-size:.78rem; line-height:1; }
 .more-to-know[open] { background:#eff9fb; border-left:3px solid #72d5f2; padding:.8rem .9rem .85rem; border-radius:0 .7rem .7rem 0; }
 .more-to-know[open] summary::after { content:"−"; }
@@ -173,13 +173,12 @@ body { background:#f7f7f5; color:#202b35; }
 /* Rhine Window identity: water as a precise, responsive brand mark. */
 :root { --rhine-navy:#102a43; --rhine-blue:#2868c7; --rhine-light:#72d5f2; --rhine-yellow:#e7ef61; }
 .masthead-title { display:flex; align-items:center; gap:.75rem; }
-.masthead-mark { display:inline-flex; width:1.55rem; height:2rem; flex:0 0 auto; color:var(--rhine-light); transition:transform .2s ease, color .2s ease; }
-.masthead-mark svg { width:100%; height:100%; overflow:visible; }
-.masthead-mark:hover { color:#4fc5ec; transform:translateY(-2px) rotate(-4deg); }
+.masthead-mark { display:inline-flex; align-items:center; justify-content:center; width:1.7rem; height:2rem; flex:0 0 auto; font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; font-size:1.45rem; line-height:1; text-decoration:none; transition:transform .2s ease; }
+.masthead-mark:hover { transform:translateY(-2px) rotate(-4deg); }
 .masthead-wordmark { position:relative; }
 .masthead-wordmark::after { content:""; display:block; width:2.4rem; height:3px; margin-top:.26rem; background:var(--rhine-light); border-radius:0 2px 2px 0; }
 .content-first-header, .newsletter-issue-header { position:relative; overflow:hidden; }
-.content-first-header::after, .newsletter-issue-header::after { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.8rem; width:4.7rem; height:4.7rem; background:var(--rhine-light); border-radius:50% 50% 50% 0; transform:rotate(-45deg); opacity:.94; filter:drop-shadow(.5rem .5rem 0 var(--rhine-blue)); pointer-events:none; }
+.content-first-header::after, .newsletter-issue-header::after { content:"💧"; position:absolute; right:clamp(1rem,5vw,4rem); top:1.3rem; width:auto; height:auto; font-family:"Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif; font-size:4.4rem; line-height:1; transform:none; opacity:1; filter:drop-shadow(.4rem .4rem 0 #2868c7); pointer-events:none; }
 .content-first-header::before, .newsletter-issue-header::before { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.25rem; width:5.7rem; height:7rem; border:1px solid color-mix(in srgb,var(--rhine-blue) 35%,transparent); border-radius:1.3rem 1.3rem 0 1.3rem; transform:rotate(-7deg); pointer-events:none; }
 .briefing-issue-header { background:#eaf5f7; border:1px solid #c9e5eb; border-radius:1.3rem 1.3rem 0 1.3rem; }
 .theme-nord-dark .masthead-mark { color:#8fe4ff; }
