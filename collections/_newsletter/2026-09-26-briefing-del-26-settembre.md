@@ -6,7 +6,7 @@ sections: 5
 news_count: 5
 watch_count: 3
 reading_time: 5
-sources_count: 6
+sources_count: 5
 run_time: "26 settembre 2026, 05:33"
 recency_window: "massimo 36 ore"
 categories: [Politica, Economia, Energia, Sicurezza]
