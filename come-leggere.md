@@ -9,9 +9,11 @@ permalink: /come-leggere/
 Ogni edizione segue lo stesso percorso:
 
 1. **Il punto:** una frase per capire il tono della giornata.
-2. **Le notizie:** le storie divise per tema, non per rumore.
+2. **Le notizie:** storie divise per tema, non per rumore.
 3. **Il contesto:** perché una notizia è importante e cosa osservare dopo.
 4. **L’impatto:** cosa può cambiare per chi vive o lavora in Germania.
 5. **Le fonti:** link diretti per approfondire e controllare.
+
+Le fonti devono essere pubblicate o aggiornate entro 36 ore dall’edizione. I badge indicano: **F** accesso libero, **P** paywall o accesso parziale, **O** fonte ufficiale.
 
 Non è una sostituzione dei giornali. È un punto di partenza ragionato.

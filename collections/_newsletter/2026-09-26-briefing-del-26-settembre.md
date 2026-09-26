@@ -14,7 +14,7 @@ tags: [briefing, germania, economia, energia, volkswagen, sicurezza, berlino]
 toc: false
 ---
 
-<div class="briefing-summary"><strong>Metodo:</strong> sono rimasti solo sviluppi con fonti pubblicate o aggiornate entro le 36 ore precedenti l’invio. Le fonti sono collegate sotto ogni notizia e classificate con <strong>F</strong> (accesso libero), <strong>P</strong> (paywall/parziale) o <strong>O</strong> (fonte ufficiale).</div>
+<div class="briefing-summary"><strong>In breve:</strong> cinque sviluppi verificati, con fonti dirette e aggiornate entro 36 ore. <a href="/prj-news-mattino/come-leggere/">Come funziona il briefing →</a></div>
 
 <article class="briefing-item"><div class="briefing-item-title"><h2>La SPD vuole rinegoziare la riforma della non autosufficienza</h2><p class="topic-label">Politica sociale</p></div><div class="briefing-item-body"><p>La SPD vuole riaprire la riforma dell’assistenza e propone un tetto alla quota pagata dagli ospiti delle strutture. Un documento esaminato da Tagesschau indica un limite iniziale di 1.500 euro al mese e costi stimati tra uno e tre miliardi di euro. La proposta mette sotto pressione il calendario del ministro della Salute Carsten Linnemann e lascia aperto il nodo del finanziamento.</p><div class="item-sources"><div class="source-line"><span class="source-access free">F</span> <a href="https://www.tagesschau.de/inland/pflegekosten-deckel-100.html" rel="noopener">Tagesschau — Tetto ai costi delle strutture</a></div></div></div></article>
 
