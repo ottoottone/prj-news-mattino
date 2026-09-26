@@ -156,15 +156,17 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .watch-today, .theme-nord-dark .sources-section { border-color:#6d879a; }
 .theme-nord-dark .watch-note { border-left-color:#e8c76c; }
 
-.more-to-know { margin-top:1.25rem; border-top:1px solid #d7dde1; padding-top:.8rem; }
-.more-to-know summary { color:#1d5d91; cursor:pointer; font-size:.82rem; font-weight:800; letter-spacing:.06em; list-style:none; }
+.more-to-know { margin-top:1.15rem; padding-top:.7rem; }
+.more-to-know summary { display:inline-flex; align-items:center; gap:.42rem; color:#1d5d91; cursor:pointer; font-size:.78rem; font-weight:800; letter-spacing:.06em; list-style:none; }
 .more-to-know summary::-webkit-details-marker { display:none; }
-.more-to-know summary::before { content:"＋"; display:inline-flex; align-items:center; justify-content:center; width:1.25rem; height:1.25rem; margin-right:.45rem; border:1px solid currentColor; border-radius:50%; font-size:.9rem; line-height:1; }
-.more-to-know[open] summary::before { content:"−"; }
-.more-to-know ul { display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin:.8rem 0 0; padding:0; list-style:none; }
-.more-to-know li { font-size:.86rem; }
-.more-to-know a { color:#334b5e; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
-.theme-nord-dark .more-to-know { border-color:#344656; }
+.more-to-know summary::before { content:""; display:inline-block; width:.72rem; height:.92rem; background:#72d5f2; border-radius:50% 50% 50% 0; transform:rotate(-45deg); box-shadow:2px 2px 0 #2868c7; }
+.more-to-know summary::after { content:"＋"; display:inline-flex; align-items:center; justify-content:center; width:1.1rem; height:1.1rem; border:1px solid currentColor; border-radius:50%; font-size:.78rem; line-height:1; }
+.more-to-know[open] { background:#eff9fb; border-left:3px solid #72d5f2; padding:.8rem .9rem .85rem; border-radius:0 .7rem .7rem 0; }
+.more-to-know[open] summary::after { content:"−"; }
+.more-to-know ul { display:flex; flex-wrap:wrap; gap:.45rem 1.15rem; margin:.75rem 0 0; padding:0; list-style:none; }
+.more-to-know li { font-size:.84rem; }
+.more-to-know a { color:#2868c7; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.theme-nord-dark .more-to-know[open] { background:#172d39; border-left-color:#72d5f2; }
 .theme-nord-dark .more-to-know summary, .theme-nord-dark .more-to-know a { color:#9bd3ff; }
 @media (max-width:600px) { .more-to-know ul { display:grid; gap:.45rem; } }
 
