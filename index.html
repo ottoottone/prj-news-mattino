@@ -12,9 +12,9 @@ title: Oggi
     <p class="content-first-deck">{{ latest_issue.description }}</p>
   </div>
   <div class="briefing-facts compact-facts" aria-label="Dettagli dell'edizione">
-    <div><strong>{{ latest_issue.sections | default: 5 }}</strong><span>sezioni</span></div>
+    <div><strong>{{ latest_issue.news_count | default: latest_issue.sections | default: 5 }}</strong><span>notizie</span></div>
     <div><strong>{{ latest_issue.reading_time | default: 5 }}′</strong><span>lettura</span></div>
-    <div><strong>{{ latest_issue.sources_count | default: 12 }}</strong><span>fonti</span></div>
+    <div><strong>{{ latest_issue.sources_count | default: 12 }}</strong><span>fonti collegate</span></div>
   </div>
 </section>
 
