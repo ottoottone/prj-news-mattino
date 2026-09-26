@@ -1,6 +1,7 @@
 ---
 title: "Politica, economia, energia e sicurezza in Germania"
 date: 2026-09-26
+permalink: /2026/09/26/briefing-del-26-settembre/
 description: "Cinque sviluppi verificati e pubblicati nelle ultime 36 ore, più ciò che osservare oggi."
 sections: 5
 news_count: 5
