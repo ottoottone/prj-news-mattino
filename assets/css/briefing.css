@@ -165,7 +165,7 @@ body { background:#f7f7f5; color:#202b35; }
 .masthead-wordmark { position:relative; }
 .masthead-wordmark::after { content:""; display:block; width:2.4rem; height:3px; margin-top:.26rem; background:var(--rhine-light); border-radius:0 2px 2px 0; }
 .content-first-header, .newsletter-issue-header { position:relative; overflow:hidden; }
-.content-first-header::after, .newsletter-issue-header::after { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.25rem; width:4.8rem; height:6.1rem; background:var(--rhine-light); clip-path:polygon(50% 0,100% 48%,92% 72%,76% 91%,50% 100%,24% 91%,8% 72%,0 48%); opacity:.92; filter:drop-shadow(.5rem .5rem 0 var(--rhine-blue)); pointer-events:none; }
+.content-first-header::after, .newsletter-issue-header::after { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.8rem; width:4.7rem; height:4.7rem; background:var(--rhine-light); border-radius:50% 50% 50% 0; transform:rotate(-45deg); opacity:.94; filter:drop-shadow(.5rem .5rem 0 var(--rhine-blue)); pointer-events:none; }
 .content-first-header::before, .newsletter-issue-header::before { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.25rem; width:5.7rem; height:7rem; border:1px solid color-mix(in srgb,var(--rhine-blue) 35%,transparent); border-radius:1.3rem 1.3rem 0 1.3rem; transform:rotate(-7deg); pointer-events:none; }
 .briefing-issue-header { background:#eaf5f7; border:1px solid #c9e5eb; border-radius:1.3rem 1.3rem 0 1.3rem; }
 .theme-nord-dark .masthead-mark { color:#8fe4ff; }
