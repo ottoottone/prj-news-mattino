@@ -156,6 +156,18 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .watch-today, .theme-nord-dark .sources-section { border-color:#6d879a; }
 .theme-nord-dark .watch-note { border-left-color:#e8c76c; }
 
+.more-to-know { margin-top:1.25rem; border-top:1px solid #d7dde1; padding-top:.8rem; }
+.more-to-know summary { color:#1d5d91; cursor:pointer; font-size:.82rem; font-weight:800; letter-spacing:.06em; list-style:none; }
+.more-to-know summary::-webkit-details-marker { display:none; }
+.more-to-know summary::before { content:"＋"; display:inline-flex; align-items:center; justify-content:center; width:1.25rem; height:1.25rem; margin-right:.45rem; border:1px solid currentColor; border-radius:50%; font-size:.9rem; line-height:1; }
+.more-to-know[open] summary::before { content:"−"; }
+.more-to-know ul { display:flex; flex-wrap:wrap; gap:.5rem 1rem; margin:.8rem 0 0; padding:0; list-style:none; }
+.more-to-know li { font-size:.86rem; }
+.more-to-know a { color:#334b5e; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
+.theme-nord-dark .more-to-know { border-color:#344656; }
+.theme-nord-dark .more-to-know summary, .theme-nord-dark .more-to-know a { color:#9bd3ff; }
+@media (max-width:600px) { .more-to-know ul { display:grid; gap:.45rem; } }
+
 /* Rhine Window identity: water as a precise, responsive brand mark. */
 :root { --rhine-navy:#102a43; --rhine-blue:#2868c7; --rhine-light:#72d5f2; --rhine-yellow:#e7ef61; }
 .masthead-title { display:flex; align-items:center; gap:.75rem; }
