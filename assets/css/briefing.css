@@ -119,9 +119,9 @@ body { background:#f7f7f5; color:#202b35; }
 .briefing-item-body p { max-width:70ch; margin:0 0 1.15rem; line-height:1.7; }
 .inline-source { color:#145b88; font-weight:750; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }
 .item-sources, .source-directory { display:grid; gap:.5rem; margin-top:1.25rem; }
-.source-line { display:grid; grid-template-columns:minmax(0,1fr) max-content; align-items:center; gap:1rem; min-height:2rem; padding:.45rem 0; border-top:1px solid #e4e7e9; font-size:.86rem; }
-.source-line a { color:#334b5e; font-weight:650; line-height:1.35; }
-.source-access { justify-self:end; margin:0; min-width:11.5rem; text-align:center; }
+.source-line { display:grid; grid-template-columns:11.5rem minmax(0,1fr); align-items:center; gap:1rem; min-height:2rem; padding:.45rem 0; border-top:1px solid #e4e7e9; font-size:.86rem; }
+.source-line a { grid-column:2; grid-row:1; color:#334b5e; font-weight:650; line-height:1.35; }
+.source-access { grid-column:1; grid-row:1; justify-self:stretch; margin:0; min-width:0; text-align:center; }
 .source-access.partial { background:#fff5df; color:#714d10; border-color:#e7c982; }
 .source-access.official { background:#e7f3ec; color:#155d3a; border-color:#a8d2b9; }
 .watch-today, .sources-section { display:grid; grid-template-columns:minmax(210px,.36fr) minmax(0,1fr); gap:3rem; margin-top:0; padding:2.25rem 0; border-top:2px solid #17202a; }
@@ -134,5 +134,24 @@ body { background:#f7f7f5; color:#202b35; }
 .sources-section .source-line:first-child { border-top:0; }
 .post-tags, .post-categories { display:none; }
 .compact-archive { border-top:1px solid #cfd5da; padding-top:2.5rem; margin-top:1rem; }
-@media (max-width:800px) { .content { padding:2.25rem 1.1rem 4rem; } .content-first-header { display:block; } .compact-facts { margin-top:2rem; max-width:420px; } .briefing-item, .watch-today, .sources-section { grid-template-columns:1fr; gap:1rem; } .briefing-item { padding:1.7rem 0; } .source-line { grid-template-columns:1fr; gap:.4rem; align-items:start; } .source-access { justify-self:start; min-width:0; } }
+@media (max-width:800px) { .content { padding:2.25rem 1.1rem 4rem; } .content-first-header { display:block; } .compact-facts { margin-top:2rem; max-width:420px; } .briefing-item, .watch-today, .sources-section { grid-template-columns:1fr; gap:1rem; } .briefing-item { padding:1.7rem 0; } .source-line { grid-template-columns:1fr; gap:.4rem; align-items:start; } .source-line a { grid-column:1; grid-row:2; } .source-access { grid-column:1; grid-row:1; justify-self:start; min-width:0; } }
+
+/* Dark mode: override the editorial light surfaces with a readable dark palette. */
+.theme-nord-dark body { background:#101820; color:#e8eef2; }
+.theme-nord-dark .masthead { background:rgba(16,24,32,.97); border-color:#344656; box-shadow:0 1px 8px rgba(0,0,0,.35); }
+.theme-nord-dark .masthead-wordmark, .theme-nord-dark .content-first-header h1, .theme-nord-dark .briefing-item-title h2, .theme-nord-dark .watch-today h2, .theme-nord-dark .sources-section h2 { color:#f5f8fa; }
+.theme-nord-dark .masthead-byline, .theme-nord-dark .content-first-deck, .theme-nord-dark .briefing-facts span, .theme-nord-dark .watch-note { color:#b8c7d1; }
+.theme-nord-dark .content-first-header, .theme-nord-dark .briefing-item, .theme-nord-dark .compact-archive { border-color:#405464; }
+.theme-nord-dark .briefing-facts div { border-color:#405464; }
+.theme-nord-dark .briefing-facts strong { color:#f5f8fa; }
+.theme-nord-dark .briefing-summary { background:#1b2a36; border-color:#405464; border-left-color:#77b8e8; color:#edf4f7; }
+.theme-nord-dark .briefing-item-body p, .theme-nord-dark .watch-today li { color:#e1e9ee; }
+.theme-nord-dark .topic-label { color:#8dcaff; }
+.theme-nord-dark .inline-source, .theme-nord-dark .source-line a { color:#9bd3ff; }
+.theme-nord-dark .source-line { border-color:#344656; }
+.theme-nord-dark .source-access.partial { background:#493816; color:#ffe7a6; border-color:#987c35; }
+.theme-nord-dark .source-access.official { background:#143d2b; color:#baf1ce; border-color:#3c8a62; }
+.theme-nord-dark .watch-today, .theme-nord-dark .sources-section { border-color:#6d879a; }
+.theme-nord-dark .watch-note { border-left-color:#e8c76c; }
+
 
