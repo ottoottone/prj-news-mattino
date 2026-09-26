@@ -3,52 +3,29 @@ layout: default
 title: Oggi
 ---
 
-<section class="briefing-hero" aria-labelledby="briefing-title">
-  <div class="briefing-hero-kicker"><span class="live-dot" aria-hidden="true"></span> Aggiornato ogni mattina · Berlino</div>
-  <h1 id="briefing-title">La Germania,<br><em>in breve.</em></h1>
-  <p class="briefing-hero-lede">Le notizie che contano, spiegate in italiano senza rumore.</p>
-  <div class="briefing-hero-actions">
-    <a class="button button-primary" href="#ultima-edizione">Leggi l’ultima edizione <span aria-hidden="true">↓</span></a>
-    <a class="button button-quiet" href="{{ '/come-leggere/' | relative_url }}">Come funziona</a>
-  </div>
-</section>
-
 {% assign latest_issue = site.newsletter | sort: 'date' | reverse | first %}
 {% if latest_issue %}
-<section id="ultima-edizione" class="latest-briefing" aria-labelledby="latest-title">
-  <div class="section-heading">
-    <div><p class="eyebrow">L’edizione di oggi</p><h2 id="latest-title">{{ latest_issue.title }}</h2></div>
-    <time datetime="{{ latest_issue.date | date_to_xmlschema }}">{{ latest_issue.date | date: "%d.%m.%Y" }}</time>
+<section class="content-first-header" aria-labelledby="today-title">
+  <div>
+    <p class="eyebrow">Edizione di oggi · {{ latest_issue.date | date: "%d.%m.%Y" }}</p>
+    <h1 id="today-title">{{ latest_issue.title }}</h1>
+    <p class="content-first-deck">{{ latest_issue.description }}</p>
   </div>
-  <div class="latest-briefing-grid">
-    <div class="latest-briefing-copy">
-      {% if latest_issue.description %}<p class="lead">{{ latest_issue.description }}</p>{% endif %}
-      <a class="text-link" href="{{ latest_issue.url | relative_url }}">Apri il briefing completo <span aria-hidden="true">→</span></a>
-    </div>
-    <div class="briefing-facts" aria-label="Dettagli dell'edizione">
-      <div><strong>{{ latest_issue.sections | default: 5 }}</strong><span>sezioni</span></div>
-      <div><strong>{{ latest_issue.reading_time | default: 5 }}′</strong><span>di lettura</span></div>
-      <div><strong>{{ latest_issue.sources_count | default: 12 }}</strong><span>fonti</span></div>
-    </div>
-  </div>
-</section>
-{% endif %}
-
-<section class="editorial-principles" aria-labelledby="principles-title">
-  <p class="eyebrow">Il nostro filtro</p>
-  <h2 id="principles-title">Meno rumore.<br><span>Più contesto.</span></h2>
-  <div class="principles-grid">
-    <article><span class="principle-number">01</span><h3>Selezioniamo</h3><p>Solo ciò che può cambiare il modo in cui guardi alla Germania.</p></article>
-    <article><span class="principle-number">02</span><h3>Spieghiamo</h3><p>Il contesto tedesco, con parole semplici e senza titoli urlati.</p></article>
-    <article><span class="principle-number">03</span><h3>Colleghiamo</h3><p>Fonti verificabili e una lettura utile anche per chi vive in Italia.</p></article>
+  <div class="briefing-facts compact-facts" aria-label="Dettagli dell'edizione">
+    <div><strong>{{ latest_issue.sections | default: 5 }}</strong><span>sezioni</span></div>
+    <div><strong>{{ latest_issue.reading_time | default: 5 }}′</strong><span>lettura</span></div>
+    <div><strong>{{ latest_issue.sources_count | default: 12 }}</strong><span>fonti</span></div>
   </div>
 </section>
 
-<section class="archive-preview" aria-labelledby="archive-title">
+<article class="homepage-briefing" aria-labelledby="today-title">
+  {{ latest_issue.content }}
+</article>
+
+<section class="archive-preview compact-archive" aria-labelledby="archive-title">
   <div class="section-heading"><div><p class="eyebrow">Da rileggere</p><h2 id="archive-title">Le ultime edizioni</h2></div><a class="text-link" href="{{ '/archivio/' | relative_url }}">Vedi tutto →</a></div>
-  <ul class="post-feed archive-feed">
-    {% for issue in site.newsletter limit: 4 %}
-      <li class="post-feed-item"><div class="post-feed-meta"><time datetime="{{ issue.date | date_to_xmlschema }}">{{ issue.date | date: "%d.%m.%Y" }}</time><span class="post-feed-sep">·</span><span>{{ issue.reading_time | default: 5 }} min</span></div><h3 class="post-feed-title"><a href="{{ issue.url | relative_url }}">{{ issue.title }}</a></h3><p class="post-feed-excerpt">{{ issue.description }}</p></li>
-    {% endfor %}
-  </ul>
+  <ul class="post-feed archive-feed">{% for issue in site.newsletter limit: 4 %}<li class="post-feed-item"><div class="post-feed-meta"><time datetime="{{ issue.date | date_to_xmlschema }}">{{ issue.date | date: "%d.%m.%Y" }}</time><span class="post-feed-sep">·</span><span>{{ issue.reading_time | default: 5 }} min</span></div><h3 class="post-feed-title"><a href="{{ issue.url | relative_url }}">{{ issue.title }}</a></h3><p class="post-feed-excerpt">{{ issue.description }}</p></li>{% endfor %}</ul>
 </section>
+{% else %}
+<section class="content-first-header"><p class="eyebrow">Briefing mattutino</p><h1>Il prossimo briefing sta arrivando.</h1><p class="content-first-deck">Torna presto per leggere la sintesi della giornata.</p></section>
+{% endif %}
