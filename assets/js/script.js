@@ -126,11 +126,7 @@
   };
 })(document);
 
-// Theme menu: one popover controlling two independent axes —
-//   mode  (light/dark)  -> 'theme'        key, theme-nord-light/dark classes
-//   style (flat/glazed) -> 'theme-style'  key, theme-glazed class
-// The classes are already applied pre-paint by the inline script in
-// head.html; this wires the picker UI, persistence, and live updates.
+// Theme menu: a popover for the light/dark theme.
 (function(document) {
   var root = document.documentElement;
   var menuToggle = document.querySelector('#theme-menu-toggle');
@@ -141,9 +137,7 @@
   var options = Array.prototype.slice.call(panel.querySelectorAll('.theme-option'));
   var lightClass = 'theme-nord-light';
   var darkClass = 'theme-nord-dark';
-  var glazedClass = 'theme-glazed';
   var modeKey = 'theme';
-  var styleKey = 'theme-style';
   var mediaQuery = null;
   var storedMode = null;
 
@@ -167,18 +161,10 @@
     return root.classList.contains(darkClass) ? 'dark' : 'light';
   }
 
-  function currentStyle() {
-    return root.classList.contains(glazedClass) ? 'glazed' : 'flat';
-  }
-
   function syncOptions() {
     var mode = currentMode();
-    var style = currentStyle();
     options.forEach(function(option) {
-      var on = option.dataset.axis === 'mode'
-        ? option.dataset.value === mode
-        : option.dataset.value === style;
-      option.setAttribute('aria-checked', on ? 'true' : 'false');
+      option.setAttribute('aria-checked', option.dataset.value === mode ? 'true' : 'false');
     });
   }
 
@@ -200,20 +186,6 @@
         'https://giscus.app'
       );
     }
-  }
-
-  function applyStyle(style, persist) {
-    if (style === 'glazed') {
-      root.classList.add(glazedClass);
-    } else {
-      root.classList.remove(glazedClass);
-    }
-
-    if (persist) {
-      write(styleKey, style);
-    }
-
-    syncOptions();
   }
 
   // ---- popover open/close ----
@@ -244,11 +216,7 @@
 
   options.forEach(function(option) {
     option.addEventListener('click', function() {
-      if (option.dataset.axis === 'mode') {
-        applyTheme(option.dataset.value, true);
-      } else {
-        applyStyle(option.dataset.value, true);
-      }
+      applyTheme(option.dataset.value, true);
     });
   });
 
@@ -278,7 +246,6 @@
   storedMode = read(modeKey, ['light', 'dark']);
   var initialMode = storedMode || (mediaQuery && mediaQuery.matches ? 'dark' : 'light');
   applyTheme(initialMode, false);
-  applyStyle(read(styleKey, ['flat', 'glazed']) || 'flat', false);
 
   if (mediaQuery) {
     var handleSystemChange = function(event) {
@@ -293,12 +260,9 @@
     }
   }
 
-  // Exposed for the keyboard shortcuts (t = mode, Shift+G = glaze).
+  // Exposed for the keyboard shortcut (t = mode).
   window.__toggleMode = function() {
     applyTheme(currentMode() === 'dark' ? 'light' : 'dark', true);
-  };
-  window.__toggleGlaze = function() {
-    applyStyle(currentStyle() === 'glazed' ? 'flat' : 'glazed', true);
   };
 })(document);
 
@@ -783,14 +747,6 @@
     if (key === 't') {
       event.preventDefault();
       if (window.__toggleMode) window.__toggleMode();
-      return;
-    }
-
-    // Shift+G toggles the glazed (frosted-glass) look. Uppercase 'G'
-    // never collides with the lowercase 'g' "go to" chord above.
-    if (key === 'G') {
-      event.preventDefault();
-      if (window.__toggleGlaze) window.__toggleGlaze();
       return;
     }
 

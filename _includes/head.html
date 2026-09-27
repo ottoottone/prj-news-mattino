@@ -52,12 +52,6 @@
 
       root.classList.remove(lightClass, darkClass);
       root.classList.add(saved === 'dark' ? darkClass : lightClass);
-
-      try {
-        if (localStorage.getItem('theme-style') === 'glazed') {
-          root.classList.add('theme-glazed');
-        }
-      } catch (e) {}
     })();
   </script>
 
