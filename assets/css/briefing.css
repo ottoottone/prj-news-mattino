@@ -121,7 +121,7 @@ body { background:#f7f7f5; color:#202b35; }
 .item-sources, .source-directory { display:grid; gap:.5rem; margin-top:1.25rem; }
 .source-line { display:grid; grid-template-columns:2.25rem minmax(0,1fr); align-items:center; gap:.55rem; min-height:2rem; padding:.45rem 0; border-top:1px solid #e4e7e9; font-size:.86rem; }
 .source-line a { grid-column:2; grid-row:1; color:#334b5e; font-weight:650; line-height:1.35; }
-.source-lang { display:inline-block; margin-right:.35rem; padding:.08rem .3rem; border:1px solid #b9c8d2; border-radius:999px; color:#1d5d91; font-size:.68rem; font-weight:800; letter-spacing:.04em; vertical-align:.08em; }
+.source-lang { display:inline-flex; align-items:center; justify-content:center; width:2rem; height:2rem; margin-right:.35rem; padding:0; border:1px solid #b9c8d2; border-radius:50%; color:#1d5d91; font-size:.72rem; font-weight:800; letter-spacing:.04em; vertical-align:middle; flex:0 0 2rem; }
 .source-access { grid-column:1; grid-row:1; justify-self:center; display:flex; align-items:center; justify-content:center; width:2rem; height:2rem; margin:0; padding:0; border-radius:50%; text-align:center; font-size:.72rem; font-weight:800; letter-spacing:.03em; }
 .source-access.free { background:#e7f3ec; color:#155d3a; border:1px solid #a8d2b9; }
 .source-access.paywall { background:#fff5df; color:#714d10; border:1px solid #e7c982; }
