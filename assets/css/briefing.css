@@ -71,7 +71,7 @@ body { font-family:"Inter", "Helvetica Neue", Arial, sans-serif; letter-spacing:
 .sources-section li { margin:.7rem 0; }
 .post-tags, .post-categories { display:none; }
 .site-footer { margin-top:5rem; }
-@media (max-width:700px) { .masthead-byline { display:none; } .briefing-hero { padding-bottom:3.5rem; } .briefing-hero:after { width:140px; height:140px; right:0; } .latest-briefing-grid,.principles-grid { grid-template-columns:1fr; } .briefing-facts { margin-top:1rem; } .section-heading { align-items:flex-start; flex-direction:column; } .content { padding-left:1.25rem; padding-right:1.25rem; } }
+@media (max-width:700px) { .masthead { padding:.4rem 0; margin-bottom:0; } .masthead-inner { min-height:3.2rem; grid-template-columns:auto minmax(0,1fr) auto; grid-template-areas:"toggle title actions"; column-gap:.45rem; row-gap:0; } .masthead-title { flex-direction:row; align-items:center; justify-self:start; gap:.45rem; min-width:0; } .masthead-mark { width:1.15rem; height:1.45rem; } .masthead-wordmark { font-size:1.12rem; line-height:1; white-space:nowrap; } .masthead-byline { display:none; } .masthead-actions { gap:.3rem; } .masthead .icon-button, .masthead-inner .sidebar-toggle { width:2.2rem; height:2.2rem; } .masthead .icon-button .fa { font-size:1rem; } }
 @media (prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto!important; transition:none!important; } }
 :focus-visible { outline:3px solid var(--briefing-yellow); outline-offset:4px; }
 .content-first-header { display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; padding:1.5rem 0 2rem; border-bottom:1px solid var(--border); }
