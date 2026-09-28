@@ -117,6 +117,16 @@ body { font-family:"Inter", "Helvetica Neue", Arial, sans-serif; letter-spacing:
 .theme-nord-dark .theme-menu-toggle { color:var(--neon-sun); border-color:var(--neon-violet); background:var(--neon-plum); }
 .theme-nord-light .theme-menu-toggle { color:var(--neon-violet); border-color:var(--neon-violet); background:#fff; }
 @media (max-width:800px) { .content-first-header:after, .briefing-issue-header:after { margin-top:1rem; } .content-first-header h1 { font-size:2.65rem; } }
+
+/* Source labels: one rectangular component, same Neon Commons palette, semantic accent only. */
+.source-access { display:inline-flex; align-items:center; justify-content:center; width:auto; min-width:6.2rem; height:1.8rem; padding:.25rem .55rem; border:1px solid var(--neon-violet); border-radius:0; background:var(--neon-plum); color:#fff9ff; font-size:.68rem; font-weight:900; letter-spacing:.04em; line-height:1; white-space:nowrap; }
+.source-access.free { background:var(--neon-plum); color:var(--neon-sun); border-color:var(--neon-sun); }
+.source-access.paywall { background:var(--neon-plum); color:var(--neon-pink); border-color:var(--neon-pink); }
+.source-access.official { background:var(--neon-plum); color:#c7b9ff; border-color:var(--neon-violet); }
+.theme-nord-light .source-access { background:#fff; color:var(--neon-ink); }
+.theme-nord-light .source-access.free { color:#786400; border-color:#c5a900; }
+.theme-nord-light .source-access.paywall { color:#b5265d; border-color:#e93e78; }
+.theme-nord-light .source-access.official { color:#5a36c5; border-color:#6240d5; }
 :focus-visible { outline:3px solid var(--briefing-yellow); outline-offset:4px; }
 .content-first-header { display:flex; justify-content:space-between; align-items:flex-end; gap:2rem; padding:1.5rem 0 2rem; border-bottom:1px solid var(--border); }
 .content-first-header h1 { color:var(--briefing-ink); font-family:"Source Serif 4",Georgia,serif; font-size:clamp(2.5rem,6vw,4.7rem); line-height:.98; letter-spacing:-.065em; margin:.45rem 0 .75rem; }
@@ -297,5 +307,15 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .theme-menu-toggle { color:var(--neon-sun); border-color:var(--neon-violet); background:var(--neon-plum); }
 .theme-nord-light .theme-menu-toggle { color:var(--neon-violet); border-color:var(--neon-violet); background:#fff; }
 @media (max-width:800px) { .content-first-header:after, .briefing-issue-header:after { margin-top:1rem; } .content-first-header h1 { font-size:2.65rem; } }
+
+/* Source labels: one rectangular component, same Neon Commons palette, semantic accent only. */
+.source-access { display:inline-flex; align-items:center; justify-content:center; width:auto; min-width:6.2rem; height:1.8rem; padding:.25rem .55rem; border:1px solid var(--neon-violet); border-radius:0; background:var(--neon-plum); color:#fff9ff; font-size:.68rem; font-weight:900; letter-spacing:.04em; line-height:1; white-space:nowrap; }
+.source-access.free { background:var(--neon-plum); color:var(--neon-sun); border-color:var(--neon-sun); }
+.source-access.paywall { background:var(--neon-plum); color:var(--neon-pink); border-color:var(--neon-pink); }
+.source-access.official { background:var(--neon-plum); color:#c7b9ff; border-color:var(--neon-violet); }
+.theme-nord-light .source-access { background:#fff; color:var(--neon-ink); }
+.theme-nord-light .source-access.free { color:#786400; border-color:#c5a900; }
+.theme-nord-light .source-access.paywall { color:#b5265d; border-color:#e93e78; }
+.theme-nord-light .source-access.official { color:#5a36c5; border-color:#6240d5; }
 
 
