@@ -3,7 +3,10 @@ layout: default
 title: Oggi
 ---
 
-{% assign latest_issue = site.newsletter | sort: 'date' | reverse | first %}
+{% assign latest_issue = nil %}
+{% assign latest_path = site.data.start_here.posts | first %}
+{% for issue in site.newsletter %}{% if issue.url == latest_path %}{% assign latest_issue = issue %}{% endif %}{% endfor %}
+{% if latest_issue == nil %}{% assign latest_issue = site.newsletter | sort: 'date' | reverse | first %}{% endif %}
 {% if latest_issue %}
 <section class="content-first-header" aria-labelledby="today-title">
   <div>
