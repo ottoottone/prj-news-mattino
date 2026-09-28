@@ -188,7 +188,6 @@ body { background:#f7f7f5; color:#202b35; }
 .briefing-issue-header { background:#eaf5f7; border:1px solid #c9e5eb; border-radius:1.3rem 1.3rem 0 1.3rem; }
 .theme-nord-dark .masthead-mark { color:#8fe4ff; }
 .theme-nord-dark .masthead-wordmark::after { background:#8fe4ff; }
-.theme-nord-dark .content-first-header::after, .theme-nord-dark .newsletter-issue-header::after { background:#72d5f2; filter:drop-shadow(.5rem .5rem 0 #2868c7); }
-@media (max-width:700px) { .masthead-title { gap:.55rem; } .masthead-mark { width:1.25rem; height:1.65rem; } .content-first-header::after, .newsletter-issue-header::after { width:3.2rem; height:4.1rem; right:1rem; top:1rem; } .content-first-header::before, .newsletter-issue-header::before { width:4rem; height:5rem; right:.7rem; top:.8rem; } }
+@media (max-width:700px) { .masthead-title { gap:.55rem; } .masthead-mark { width:1.25rem; height:1.65rem; } }
 
 
