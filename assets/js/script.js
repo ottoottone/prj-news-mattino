@@ -191,7 +191,7 @@
   }
 
   storedMode = read(modeKey, ['light', 'dark']);
-  var initialMode = storedMode || (mediaQuery && mediaQuery.matches ? 'dark' : 'light');
+  var initialMode = storedMode || 'dark';
   applyTheme(initialMode, false);
 
   if (mediaQuery) {
