@@ -112,8 +112,13 @@ body { background:#f7f7f5; color:#202b35; }
 .homepage-briefing { max-width:1000px; padding:2rem 0 3rem; }
 .homepage-briefing .briefing-summary { margin:0 0 1.5rem; }
 .briefing-summary { background:#fff; border:1px solid #dfe3e6; border-left:4px solid #1d5d91; border-radius:0; padding:1rem 1.2rem; color:#26333d; }
-.briefing-item { display:grid; grid-template-columns:minmax(210px, .36fr) minmax(0,1fr); gap:3rem; padding:2.1rem 0; margin:0; border-top:1px solid #cfd5da; }
+.briefing-item { display:block; padding:2.1rem 0 2.25rem; margin:0; border-top:1px solid #cfd5da; }
 .briefing-item:first-of-type { border-top:2px solid #17202a; }
+.briefing-item-title { max-width:72ch; }
+.briefing-image { margin:1.25rem 0 1.35rem; width:100%; }
+.briefing-image img { display:block; width:100%; max-height:430px; object-fit:cover; border-radius:12px; background:#dce7eb; }
+.briefing-image figcaption { margin-top:.45rem; color:#66727d; font-size:.72rem; line-height:1.35; }
+.briefing-image figcaption a { color:#1d5d91; }
 .briefing-item-title h2 { color:#17202a; font-size:clamp(1.45rem,2.5vw,2rem); line-height:1.1; letter-spacing:-.04em; margin:0; }
 .topic-label { color:#1d5d91; font-size:.72rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin:.7rem 0 0; }
 .briefing-item-body p { max-width:70ch; margin:0 0 1.15rem; line-height:1.7; }
