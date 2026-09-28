@@ -165,7 +165,7 @@ body { background:#f7f7f5; color:#202b35; }
 .more-to-know { margin-top:1.15rem; padding-top:.7rem; }
 .more-to-know summary { display:inline-flex; align-items:center; gap:.42rem; color:#1d5d91; cursor:pointer; font-size:.78rem; font-weight:800; letter-spacing:.06em; list-style:none; }
 .more-to-know summary::-webkit-details-marker { display:none; }
-.more-to-know summary::before { content:""; display:inline-block; width:.72rem; height:.92rem; background:linear-gradient(135deg,#9be8ff,#4ec4ea); border-radius:50% 50% 50% 0; transform:rotate(-45deg); box-shadow:2px 2px 0 #2868c7; }
+.more-to-know summary::before { content:""; display:inline-block; width:.72rem; height:.95rem; flex:0 0 .72rem; background:linear-gradient(160deg,#9be8ff 0%,#4ec4ea 72%); clip-path:polygon(50% 0,82% 35%,100% 60%,96% 78%,78% 94%,50% 100%,22% 94%,4% 78%,0 60%,18% 35%); margin-right:.12rem; }
 .more-to-know summary::after { content:"＋"; display:inline-flex; align-items:center; justify-content:center; width:1.1rem; height:1.1rem; border:1px solid currentColor; border-radius:50%; font-size:.78rem; line-height:1; }
 .more-to-know[open] { background:#eff9fb; border-left:3px solid #72d5f2; padding:.8rem .9rem .85rem; border-radius:0 .7rem .7rem 0; }
 .more-to-know[open] summary::after { content:"−"; }
