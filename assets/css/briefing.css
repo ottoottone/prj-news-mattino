@@ -339,3 +339,25 @@ body { background:#f7f7f5; color:#202b35; }
 .source-lang { display:inline-flex; align-items:center; justify-content:center; width:auto; min-width:2.5rem; height:1.55rem; margin:0; padding:.2rem .4rem; border:1px solid var(--neon-violet); border-radius:0; background:var(--neon-plum); color:#c7b9ff; font-size:.62rem; font-weight:900; letter-spacing:.04em; line-height:1; }
 .theme-nord-light .source-lang { background:#fff; color:#5a36c5; border-color:#6240d5; }
 
+/* The drop uses the identity pink everywhere it appears in the interface. */
+.masthead-mark { filter:none; }
+.more-to-know summary::before { background:linear-gradient(160deg,#ff9ac0 0%,#ff4f87 72%); }
+
+/* Sidebar: the same Neon Commons palette, geometry and diagonal accent. */
+.sidebar { background:var(--neon-plum); color:#f3eaff; border-right:4px solid var(--neon-pink); box-shadow:none; }
+.sidebar:before { content:""; display:block; height:8px; background:repeating-linear-gradient(135deg,var(--neon-pink) 0 9px,var(--neon-violet) 9px 18px,var(--neon-sun) 18px 27px); }
+.sidebar a { color:#fff9ff; }
+.sidebar-item { padding:1rem; }
+.sidebar-intro .eyebrow { color:var(--neon-sun); }
+.sidebar-intro p:last-child, .sidebar-note p { color:#d9d0e4; }
+.sidebar-nav { border-bottom:0; }
+.sidebar-nav-item { border-top:1px solid #4e3976; padding:.65rem 1rem; }
+.sidebar-nav-item.active, .sidebar-nav-item:hover, .sidebar-nav-item:focus-visible { background:var(--neon-pink); color:#21172f; }
+.sidebar-toggle { color:var(--neon-sun); background:var(--neon-plum); border-color:var(--neon-violet); border-radius:0; }
+.sidebar-toggle:active, #sidebar-checkbox:focus ~ .wrap .sidebar-toggle, #sidebar-checkbox:checked ~ .wrap .sidebar-toggle { background:var(--neon-pink); border-color:var(--neon-pink); color:#21172f; }
+.theme-nord-light .sidebar { background:#fff; color:var(--neon-ink); border-right-color:var(--neon-pink); }
+.theme-nord-light .sidebar a { color:var(--neon-ink); }
+.theme-nord-light .sidebar-intro p:last-child, .theme-nord-light .sidebar-note p { color:#5d5268; }
+.theme-nord-light .sidebar-nav-item { border-top-color:#d6cadf; }
+.theme-nord-light .sidebar-nav-item.active, .theme-nord-light .sidebar-nav-item:hover, .theme-nord-light .sidebar-nav-item:focus-visible { background:#ff9ac0; color:var(--neon-ink); }
+.theme-nord-light .sidebar-toggle { color:var(--neon-violet); background:#fff; border-color:var(--neon-violet); }
