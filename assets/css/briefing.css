@@ -185,7 +185,6 @@ body { background:#f7f7f5; color:#202b35; }
 .masthead-wordmark { position:relative; }
 .masthead-wordmark::after { content:""; display:block; width:2.4rem; height:3px; margin-top:.26rem; background:var(--rhine-light); border-radius:0 2px 2px 0; }
 .content-first-header, .newsletter-issue-header { position:relative; overflow:hidden; }
-.content-first-header::after, .newsletter-issue-header::after { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.55rem; width:4.6rem; height:4.6rem; background:linear-gradient(135deg,#9be8ff,#4ec4ea); border-radius:50% 50% 50% 0; transform:rotate(-45deg); opacity:.96; filter:drop-shadow(.4rem .4rem 0 #2868c7); pointer-events:none; }
 .content-first-header::before, .newsletter-issue-header::before { content:""; position:absolute; right:clamp(1rem,5vw,4rem); top:1.25rem; width:5.7rem; height:7rem; border:1px solid color-mix(in srgb,var(--rhine-blue) 35%,transparent); border-radius:1.3rem 1.3rem 0 1.3rem; transform:rotate(-7deg); pointer-events:none; }
 .briefing-issue-header { background:#eaf5f7; border:1px solid #c9e5eb; border-radius:1.3rem 1.3rem 0 1.3rem; }
 .theme-nord-dark .masthead-mark { color:#8fe4ff; }
