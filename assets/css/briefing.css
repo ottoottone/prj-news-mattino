@@ -334,5 +334,8 @@ body { background:#f7f7f5; color:#202b35; }
 .briefing-section { border-top-width:1px; }
 .latest-briefing { border-left:1px solid var(--border); }
 .briefing-image img { border-left:0; }
-@media (max-width:800px) { .source-line { grid-template-columns:minmax(6.2rem,max-content) minmax(0,1fr); gap:.55rem; } }
+/* Final source-label refinement: compact rectangles for status and language. */
+.source-access { min-width:4.6rem; height:1.55rem; padding:.2rem .4rem; font-size:.62rem; }
+.source-lang { display:inline-flex; align-items:center; justify-content:center; width:auto; min-width:2.5rem; height:1.55rem; margin:0; padding:.2rem .4rem; border:1px solid var(--neon-violet); border-radius:0; background:var(--neon-plum); color:#c7b9ff; font-size:.62rem; font-weight:900; letter-spacing:.04em; line-height:1; }
+.theme-nord-light .source-lang { background:#fff; color:#5a36c5; border-color:#6240d5; }
 
