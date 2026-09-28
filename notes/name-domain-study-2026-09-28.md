@@ -105,3 +105,26 @@ Il DNS non è una verifica definitiva della disponibilità di un dominio: `NXDOM
 ## Modifica editoriale applicata al cronjob
 
 Le notizie europee sono ora ammesse solo quando hanno un protagonista tedesco identificabile, una decisione tedesca, un negoziato guidato dalla Germania o una conseguenza diretta e documentata per la Germania. La sola rilevanza geopolitica vaga non è sufficiente.
+
+## Pannello italiano legato alla goccia
+
+| Nome proposto | Dominio `.de` | Valutazione |
+|---|---|---|
+| **La Goccia** | `lagoccia.de` — registrato | Nome pulito e forte, ma il dominio principale non è disponibile. |
+| **Goccia** | `goccia.de` — registrato | Molto memorabile, ma non acquistabile come dominio principale. |
+| **Gocce** | `gocce.de` — registrato | Coerente con l’idea visiva, ma già occupato. |
+| **Goccia di Germania** | `gocciadigermania.de` — non registrato nel test RDAP | Chiaro, distintivo e direttamente legato al progetto; è lungo ma il migliore del pannello. |
+| **La Goccia di Germania** | `lagocciadigermania.de` — non registrato nel test RDAP | Più narrativo; dominio molto lungo. |
+| **Goccia sul Reno** | `gocciasulreno.de` — non registrato nel test RDAP | Ottimo legame con Rhine Window; suggerisce però una prospettiva più regionale. |
+| **Una Goccia di Germania** | `unagocciadigermania.de` — non registrato nel test RDAP | Caldo e riconoscibile, ma troppo lungo per un marchio quotidiano. |
+| **Goccia tedesca** | `gocciatedesca.de` — non registrato nel test RDAP | Breve, ma meno naturale come nome editoriale. |
+| **Goccia d’Europa** | `gocciadeuropa.de` — non registrato nel test RDAP | Più europeo, ma perde il fuoco sulla Germania. |
+| **Goccia in breve** | `gocciainbreve.de` — non registrato nel test RDAP | Comunica la sintesi, ma il nome è meno distintivo. |
+
+### Raccomandazione del pannello
+
+1. **Goccia di Germania** — miglior compromesso tra nome italiano, simbolo visivo e chiarezza editoriale; `gocciadigermania.de` risulta non registrato nel test RDAP.
+2. **Goccia sul Reno** — più elegante e coerente con Rhine Window; `gocciasulreno.de` risulta non registrato nel test RDAP.
+3. **Goccia in breve** — più vicino alla funzione del briefing; `gocciainbreve.de` risulta non registrato nel test RDAP.
+
+Lo stato “non registrato” deriva dal test RDAP pubblico DENIC con risposta `404` al momento della verifica; non equivale ancora a una prenotazione. Prima dell’acquisto bisogna verificare nuovamente il dominio presso DENIC/registrar e controllare marchi, omonimie e handle social.
