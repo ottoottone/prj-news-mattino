@@ -126,15 +126,11 @@
   };
 })(document);
 
-// Theme menu: a popover for the light/dark theme.
+// Single-button light/dark theme toggle.
 (function(document) {
   var root = document.documentElement;
   var menuToggle = document.querySelector('#theme-menu-toggle');
-  var panel = document.querySelector('#theme-menu-panel');
-
-  if (!menuToggle || !panel) return;
-
-  var options = Array.prototype.slice.call(panel.querySelectorAll('.theme-option'));
+  if (!menuToggle) return;
   var lightClass = 'theme-nord-light';
   var darkClass = 'theme-nord-dark';
   var modeKey = 'theme';
@@ -161,13 +157,6 @@
     return root.classList.contains(darkClass) ? 'dark' : 'light';
   }
 
-  function syncOptions() {
-    var mode = currentMode();
-    options.forEach(function(option) {
-      option.setAttribute('aria-checked', option.dataset.value === mode ? 'true' : 'false');
-    });
-  }
-
   function applyTheme(mode, persist) {
     root.classList.remove(lightClass, darkClass);
     root.classList.add(mode === 'dark' ? darkClass : lightClass);
@@ -177,7 +166,11 @@
       write(modeKey, mode);
     }
 
-    syncOptions();
+    menuToggle.setAttribute('aria-label', mode === 'dark' ? 'Passa al tema chiaro' : 'Passa al tema scuro');
+    menuToggle.setAttribute('title', mode === 'dark' ? 'Passa al tema chiaro' : 'Passa al tema scuro');
+    menuToggle.innerHTML = mode === 'dark'
+      ? '<svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><span class="sr-only">Passa al tema chiaro</span>'
+      : '<svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path></svg><span class="sr-only">Passa al tema scuro</span>';
 
     var giscusFrame = document.querySelector('iframe.giscus-frame');
     if (giscusFrame && giscusFrame.contentWindow) {
@@ -188,54 +181,8 @@
     }
   }
 
-  // ---- popover open/close ----
-  function isOpen() {
-    return !panel.hidden;
-  }
-
-  function openMenu() {
-    panel.hidden = false;
-    menuToggle.setAttribute('aria-expanded', 'true');
-    var checked = options.filter(function(o) { return o.getAttribute('aria-checked') === 'true'; })[0];
-    (checked || options[0]).focus();
-  }
-
-  function closeMenu(focusToggle) {
-    panel.hidden = true;
-    menuToggle.setAttribute('aria-expanded', 'false');
-    if (focusToggle) menuToggle.focus();
-  }
-
   menuToggle.addEventListener('click', function() {
-    if (isOpen()) {
-      closeMenu(false);
-    } else {
-      openMenu();
-    }
-  });
-
-  options.forEach(function(option) {
-    option.addEventListener('click', function() {
-      applyTheme(option.dataset.value, true);
-    });
-  });
-
-  // Close on Escape (return focus to trigger) and on outside pointer events.
-  panel.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      event.preventDefault();
-      closeMenu(true);
-    }
-  });
-
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape' && isOpen()) closeMenu(true);
-  });
-
-  document.addEventListener('pointerdown', function(event) {
-    if (isOpen() && !panel.contains(event.target) && !menuToggle.contains(event.target)) {
-      closeMenu(false);
-    }
+    applyTheme(currentMode() === 'dark' ? 'light' : 'dark', true);
   });
 
   // ---- initial state (classes already set pre-paint) ----

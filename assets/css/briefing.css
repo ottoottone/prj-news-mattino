@@ -191,4 +191,23 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .masthead-wordmark::after { background:#8fe4ff; }
 @media (max-width:700px) { .masthead-title { gap:.55rem; } .masthead-mark { width:1.25rem; height:1.65rem; } }
 
+/* Final theme contract: editorial surfaces stay readable in dark mode. */
+.theme-toggle-icon { width:1.1rem; height:1.1rem; display:block; fill:none; stroke:currentColor; stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round; }
+.theme-nord-light .theme-menu-toggle { color:#17202a; background:#fff; border:1px solid #d9dfe5; }
+.theme-nord-dark body { background:#101820; color:#e8eef2; }
+.theme-nord-dark .masthead { background:#101820; border-bottom-color:#344656; box-shadow:0 1px 8px rgba(0,0,0,.35); }
+.theme-nord-dark .masthead-wordmark, .theme-nord-dark .content-first-header h1, .theme-nord-dark .briefing-item-title h2, .theme-nord-dark .watch-today h2, .theme-nord-dark .sources-section h2 { color:#f5f8fa; }
+.theme-nord-dark .masthead-byline, .theme-nord-dark .content-first-deck, .theme-nord-dark .briefing-facts span, .theme-nord-dark .watch-note, .theme-nord-dark .briefing-image figcaption { color:#b8c7d1; }
+.theme-nord-dark .content-first-header, .theme-nord-dark .briefing-item, .theme-nord-dark .compact-archive { border-color:#405464; }
+.theme-nord-dark .briefing-summary { background:#1b2a36; border-color:#405464; border-left-color:#77b8e8; color:#edf4f7; }
+.theme-nord-dark .briefing-item-body p, .theme-nord-dark .watch-today li { color:#e1e9ee; }
+.theme-nord-dark .topic-label { color:#8dcaff; }
+.theme-nord-dark .inline-source, .theme-nord-dark .source-line a, .theme-nord-dark .briefing-image figcaption a { color:#9bd3ff; }
+.theme-nord-dark .source-line { border-color:#344656; }
+.theme-nord-dark .watch-today, .theme-nord-dark .sources-section { border-color:#6d879a; }
+.theme-nord-dark .watch-note { border-left-color:#e8c76c; }
+.theme-nord-dark .theme-menu-toggle { color:#d7f5ff; background:#182734; border-color:#486176; }
+.theme-nord-dark .briefing-issue-header { background:#182c38; border-color:#3f6275; }
+.theme-nord-dark .more-to-know[open] { background:#172d39; border-left-color:#72d5f2; }
+
 
