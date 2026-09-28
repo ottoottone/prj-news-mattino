@@ -337,11 +337,17 @@ body { background:#f7f7f5; color:#202b35; }
 /* Final source-label refinement: compact rectangles for status and language. */
 .source-access { min-width:4.6rem; height:1.55rem; padding:.2rem .4rem; font-size:.62rem; }
 .source-lang { display:inline-flex; align-items:center; justify-content:center; width:auto; min-width:2.5rem; height:1.55rem; margin:0; padding:.2rem .4rem; border:1px solid var(--neon-violet); border-radius:0; background:var(--neon-plum); color:#c7b9ff; font-size:.62rem; font-weight:900; letter-spacing:.04em; line-height:1; }
-.theme-nord-light .source-lang { background:#fff; color:#5a36c5; border-color:#6240d5; }
-
-/* The drop uses the identity pink everywhere it appears in the interface. */
-.masthead-mark { filter:none; }
-.more-to-know summary::before { background:linear-gradient(160deg,#ff9ac0 0%,#ff4f87 72%); }
+/* Compact squared source labels with filled, consistent color roles. */
+.source-access, .source-lang { display:inline-flex; align-items:center; justify-content:center; height:1.4rem; padding:.16rem .34rem; border-radius:0; font-size:.58rem; font-weight:900; letter-spacing:.035em; line-height:1; white-space:nowrap; }
+.source-access { min-width:4.1rem; }
+.source-lang { min-width:2.7rem; width:2.7rem; border:1px solid var(--neon-violet); background:var(--neon-violet); color:#fff9ff; }
+.source-access.free { background:var(--neon-sun); color:#21172f; border-color:var(--neon-sun); }
+.source-access.paywall { background:var(--neon-pink); color:#21172f; border-color:var(--neon-pink); }
+.source-access.official { background:var(--neon-violet); color:#fff9ff; border-color:var(--neon-violet); }
+.theme-nord-light .source-lang { background:#6240d5; color:#fff; border-color:#6240d5; }
+.theme-nord-light .source-access.free { background:#e7cf35; color:#21172f; border-color:#e7cf35; }
+.theme-nord-light .source-access.paywall { background:#ff9ac0; color:#21172f; border-color:#ff9ac0; }
+.theme-nord-light .source-access.official { background:#9b84ed; color:#21172f; border-color:#9b84ed; }
 
 /* Sidebar: the same Neon Commons palette, geometry and diagonal accent. */
 .sidebar { background:var(--neon-plum); color:#f3eaff; border-right:4px solid var(--neon-pink); box-shadow:none; }
@@ -361,3 +367,11 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-light .sidebar-nav-item { border-top-color:#d6cadf; }
 .theme-nord-light .sidebar-nav-item.active, .theme-nord-light .sidebar-nav-item:hover, .theme-nord-light .sidebar-nav-item:focus-visible { background:#ff9ac0; color:var(--neon-ink); }
 .theme-nord-light .sidebar-toggle { color:var(--neon-violet); background:#fff; border-color:var(--neon-violet); }
+
+/* Final filled-label and pink-drop contract. */
+.theme-nord-dark .source-access.free { background:var(--neon-sun); color:#21172f; border-color:var(--neon-sun); }
+.theme-nord-dark .source-access.paywall { background:var(--neon-pink); color:#21172f; border-color:var(--neon-pink); }
+.theme-nord-dark .source-access.official { background:var(--neon-violet); color:#fff9ff; border-color:var(--neon-violet); }
+.theme-nord-dark .source-lang { background:var(--neon-violet); color:#fff9ff; border-color:var(--neon-violet); }
+.masthead-mark { filter:none; }
+.more-to-know summary::before { background:linear-gradient(160deg,#ff9ac0 0%,#ff4f87 72%); }
