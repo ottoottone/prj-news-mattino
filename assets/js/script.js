@@ -145,6 +145,10 @@
     if (root.classList.contains(lightClass)) return 'light';
     return 'color';
   }
+  function updateCurrentLabel(mode) {
+    var label = document.querySelector('#theme-current');
+    if (label) label.textContent = mode === 'light' ? 'Chiaro' : mode === 'dark' ? 'Scuro' : 'Colore';
+  }
   function applyTheme(mode, persist) {
     root.classList.remove(lightClass, darkClass, colorClass);
     root.classList.add(mode === 'dark' ? darkClass : mode === 'light' ? lightClass : colorClass);
@@ -152,6 +156,7 @@
     options.forEach(function(option) {
       option.setAttribute('aria-pressed', option.getAttribute('data-theme-mode') === mode ? 'true' : 'false');
     });
+    updateCurrentLabel(mode);
     if (persist) write(modeKey, mode);
     var giscusFrame = document.querySelector('iframe.giscus-frame');
     if (giscusFrame && giscusFrame.contentWindow) {
@@ -161,7 +166,7 @@
   options.forEach(function(option) {
     option.addEventListener('click', function() { applyTheme(option.getAttribute('data-theme-mode'), true); });
   });
-  applyTheme(read(modeKey) || 'color', false);
+  applyTheme(read(modeKey) || 'light', false);
   window.__toggleMode = function() { applyTheme(modes[(modes.indexOf(currentMode()) + 1) % modes.length], true); };
 })(document);
 

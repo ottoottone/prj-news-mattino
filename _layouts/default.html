@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it" class="theme-nord-dark">
+<html lang="it" class="theme-nord-light">
 
   {% include head.html %}
 
@@ -24,12 +24,15 @@
               {% endif %}
             </h3>
             <div class="masthead-actions">
-              <div class="theme-menu">
-                <div id="theme-switcher" class="theme-switcher" role="group" aria-label="Tema" data-mode="color">
-                  <button class="theme-option" type="button" data-theme-mode="color" aria-pressed="true" title="Tema colorato">Colore</button>
-                  <button class="theme-option" type="button" data-theme-mode="dark" aria-pressed="false" title="Tema scuro">Scuro</button>
-                  <button class="theme-option" type="button" data-theme-mode="light" aria-pressed="false" title="Tema chiaro">Chiaro</button>
-                </div>
+              <div class="theme-menu-wrap">
+                <details class="theme-menu">
+                  <summary class="theme-menu-summary">Tema: <span id="theme-current">Chiaro</span></summary>
+                  <div id="theme-switcher" class="theme-switcher" role="group" aria-label="Seleziona tema" data-mode="light">
+                    <button class="theme-option" type="button" data-theme-mode="color" aria-pressed="false" title="Tema colorato">Colore</button>
+                    <button class="theme-option" type="button" data-theme-mode="dark" aria-pressed="false" title="Tema scuro">Scuro</button>
+                    <button class="theme-option" type="button" data-theme-mode="light" aria-pressed="true" title="Tema chiaro">Chiaro</button>
+                  </div>
+                </details>
               </div>
             </div>
           </div>

@@ -423,7 +423,28 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-light .theme-option[aria-pressed="true"] { color:#21172f; }
 .theme-nord-dark .theme-option { color:#fff9ff; }
 .theme-nord-color .theme-switcher { border-color:var(--neon-pink); }
-@media (max-width:700px) { .theme-switcher { width:7.4rem; height:1.8rem; } .theme-option { font-size:.5rem; } }
+/* Expandable vertical theme picker. */
+.theme-menu-wrap { position:relative; z-index:20; }
+.theme-menu { min-width:8.2rem; }
+.theme-menu-summary { display:flex; align-items:center; justify-content:space-between; gap:.55rem; padding:.45rem .65rem; border:1px solid var(--neon-violet); background:#fff; color:var(--neon-violet); cursor:pointer; font:800 .62rem/1 Rubik,Arial,sans-serif; letter-spacing:.05em; text-transform:uppercase; list-style:none; }
+.theme-menu-summary::-webkit-details-marker { display:none; }
+.theme-menu-summary::after { content:"＋"; font-size:.85rem; line-height:1; }
+.theme-menu[open] .theme-menu-summary::after { content:"−"; }
+.theme-switcher { display:grid; grid-template-columns:1fr; width:100%; height:auto; padding:.25rem; gap:.2rem; background:#fff; border:1px solid var(--neon-violet); border-top:0; border-radius:0; }
+.theme-switcher::before { display:none; }
+.theme-option, .theme-option[aria-pressed="true"] { min-height:1.7rem; border-radius:0; padding:.35rem .45rem; color:var(--neon-violet); text-align:left; }
+.theme-option[aria-pressed="true"] { background:var(--neon-pink); color:#21172f; }
+.theme-option:hover { background:#ffe0ea; color:#21172f; }
+.theme-nord-dark .theme-menu-summary, .theme-nord-dark .theme-switcher { background:var(--neon-plum); color:#fff9ff; }
+.theme-nord-dark .theme-menu-summary { border-color:var(--neon-pink); }
+.theme-nord-dark .theme-switcher { border-color:var(--neon-pink); }
+.theme-nord-dark .theme-option { color:#fff9ff; }
+.theme-nord-color .theme-menu-summary, .theme-nord-color .theme-switcher { background:var(--neon-plum); color:#fff9ff; }
+.theme-nord-color .theme-menu-summary { border-color:var(--neon-pink); }
+.theme-nord-color .theme-switcher { border-color:var(--neon-pink); }
+.theme-nord-color .theme-option { color:#fff9ff; }
+.theme-nord-color .theme-option[aria-pressed="true"] { color:#21172f; }
+@media (max-width:700px) { .theme-menu { min-width:7.2rem; } .theme-menu-summary { font-size:.55rem; } }
 
 /* Color mode contrast: headings stay white; links use the pink/yellow line palette. */
 .theme-nord-color .content-first-header h1,
