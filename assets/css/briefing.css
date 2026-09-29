@@ -388,4 +388,8 @@ body { background:#f7f7f5; color:#202b35; }
 .source-line .source-lang { grid-column:2; grid-row:1; }
 .source-line .source-title { grid-column:3; grid-row:1; min-width:0; }
 .compact-archive { border-top:0; }
-@media (max-width:800px) { .source-line { grid-template-columns:3.6rem 3.6rem minmax(0,1fr); gap:.45rem; } }
+/* Final geometry: source markers are true squares, not just square-cornered rectangles. */
+.source-access, .source-lang { width:1.4rem; min-width:1.4rem; height:1.4rem; padding:0; }
+.source-line { grid-template-columns:1.4rem 1.4rem minmax(0,1fr); }
+.briefing-item { border-bottom:0; }
+@media (max-width:800px) { .source-line { grid-template-columns:1.4rem 1.4rem minmax(0,1fr); } }
