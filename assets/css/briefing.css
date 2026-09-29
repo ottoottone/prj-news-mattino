@@ -454,3 +454,6 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-color .content a:hover,
 .theme-nord-color .site-footer a:hover { color:var(--neon-sun); }
 .theme-nord-color .content .text-link { color:var(--neon-sun); }
+/* Slightly lift the secondary links in “Per saperne di più”. */
+.theme-nord-color .more-to-know a { color:#ffb3ce; }
+.theme-nord-color .more-to-know a:hover { color:var(--neon-sun); }
