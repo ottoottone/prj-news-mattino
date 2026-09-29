@@ -446,6 +446,12 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-color .theme-option[aria-pressed="true"] { color:#21172f; }
 @media (max-width:700px) { .theme-menu { min-width:7.2rem; } .theme-menu-summary { font-size:.55rem; } }
 
+/* Keep the picker collapsed on load and soften its geometry. */
+.theme-menu-summary { border-radius:.65rem; }
+.theme-menu[open] .theme-menu-summary { border-radius:.65rem .65rem 0 0; }
+.theme-switcher { border-radius:0 0 .65rem .65rem; }
+.source-access, .source-lang { border-radius:.32rem; }
+
 /* Color mode contrast: headings stay white; links use the pink/yellow line palette. */
 .theme-nord-color .content-first-header h1,
 .theme-nord-color .newsletter-issue-header h1,

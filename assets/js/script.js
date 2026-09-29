@@ -164,7 +164,11 @@
     }
   }
   options.forEach(function(option) {
-    option.addEventListener('click', function() { applyTheme(option.getAttribute('data-theme-mode'), true); });
+    option.addEventListener('click', function() {
+      applyTheme(option.getAttribute('data-theme-mode'), true);
+      var menu = switcher.closest('details');
+      if (menu) menu.open = false;
+    });
   });
   applyTheme(read(modeKey) || 'light', false);
   window.__toggleMode = function() { applyTheme(modes[(modes.indexOf(currentMode()) + 1) % modes.length], true); };
