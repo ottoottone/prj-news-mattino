@@ -147,7 +147,11 @@
   }
   function updateCurrentLabel(mode) {
     var label = document.querySelector('#theme-current');
-    if (label) label.textContent = mode === 'light' ? 'Chiaro' : mode === 'dark' ? 'Scuro' : 'Colore';
+    var icon = document.querySelector('#theme-current-icon');
+    var names = { light: 'Chiaro', dark: 'Scuro', color: 'Colore' };
+    var icons = { light: '☼', dark: '◐', color: '✦' };
+    if (label) label.textContent = names[mode];
+    if (icon) icon.textContent = icons[mode];
   }
   function applyTheme(mode, persist) {
     root.classList.remove(lightClass, darkClass, colorClass);

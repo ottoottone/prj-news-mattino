@@ -446,10 +446,18 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-color .theme-option[aria-pressed="true"] { color:#21172f; }
 @media (max-width:700px) { .theme-menu { min-width:7.2rem; } .theme-menu-summary { font-size:.55rem; } }
 
-/* Keep the picker collapsed on load and soften its geometry. */
-.theme-menu-summary { border-radius:.65rem; }
-.theme-menu[open] .theme-menu-summary { border-radius:.65rem .65rem 0 0; }
-.theme-switcher { border-radius:0 0 .65rem .65rem; }
+/* Icon-only picker: the expanded panel is out of flow, so the masthead never shifts. */
+.theme-menu { position:relative; min-width:0; }
+.theme-menu-summary { width:2.35rem; height:2.35rem; justify-content:center; padding:0; border-radius:50%; font-size:1.15rem; letter-spacing:0; }
+.theme-menu-summary::after { content:""; display:none; }
+.theme-menu[open] .theme-menu-summary { border-radius:50%; }
+.theme-switcher { position:absolute; top:calc(100% + .4rem); right:0; width:2.35rem; padding:.25rem; border:1px solid var(--neon-violet); border-radius:1.2rem; box-shadow:0 8px 20px rgba(37,24,72,.18); }
+.theme-option, .theme-option[aria-pressed="true"] { position:relative; display:flex; align-items:center; justify-content:center; width:1.8rem; min-height:1.8rem; padding:0; text-align:center; font-size:1rem; }
+.theme-option::after { content:attr(data-label); position:absolute; right:calc(100% + .5rem); top:50%; transform:translateY(-50%); display:none; padding:.35rem .5rem; border-radius:.4rem; background:var(--neon-plum); color:#fff9ff; white-space:nowrap; font:800 .58rem/1 Rubik,Arial,sans-serif; letter-spacing:.04em; text-transform:uppercase; box-shadow:0 4px 12px rgba(37,24,72,.18); }
+.theme-option:hover::after, .theme-option:focus-visible::after { display:block; }
+.theme-option:hover { background:#ffe0ea; color:#21172f; }
+.theme-nord-dark .theme-menu-summary, .theme-nord-color .theme-menu-summary { color:#fff9ff; background:var(--neon-plum); }
+.theme-nord-dark .theme-switcher, .theme-nord-color .theme-switcher { background:var(--neon-plum); }
 .source-access, .source-lang { border-radius:.32rem; }
 
 /* Color mode contrast: headings stay white; links use the pink/yellow line palette. */
