@@ -126,68 +126,43 @@
   };
 })(document);
 
-// Three-mode color theme toggle: color, dark, light.
+// Three-mode color theme control with a visible slider.
 (function(document) {
   var root = document.documentElement;
-  var menuToggle = document.querySelector('#theme-menu-toggle');
-  if (!menuToggle) return;
+  var switcher = document.querySelector('#theme-switcher');
+  if (!switcher) return;
+  var options = Array.prototype.slice.call(switcher.querySelectorAll('[data-theme-mode]'));
   var lightClass = 'theme-nord-light';
   var darkClass = 'theme-nord-dark';
   var colorClass = 'theme-nord-color';
   var modeKey = 'theme';
-  var storedMode = null;
   var modes = ['color', 'dark', 'light'];
 
-  function read(key, valid) {
-    try {
-      var v = localStorage.getItem(key);
-      return valid.indexOf(v) !== -1 ? v : null;
-    } catch (e) {
-      return null;
-    }
-  }
-
-  function write(key, value) {
-    try { localStorage.setItem(key, value); } catch (e) {}
-  }
-
+  function read(key) { try { var v = localStorage.getItem(key); return modes.indexOf(v) !== -1 ? v : null; } catch (e) { return null; } }
+  function write(key, value) { try { localStorage.setItem(key, value); } catch (e) {} }
   function currentMode() {
     if (root.classList.contains(darkClass)) return 'dark';
     if (root.classList.contains(lightClass)) return 'light';
     return 'color';
   }
-
-  function nextMode(mode) {
-    return modes[(modes.indexOf(mode) + 1) % modes.length];
-  }
-
-  function modeLabel(mode) {
-    return mode === 'color' ? 'Passa al tema scuro' : mode === 'dark' ? 'Passa al tema chiaro' : 'Passa al tema colorato';
-  }
-
   function applyTheme(mode, persist) {
     root.classList.remove(lightClass, darkClass, colorClass);
     root.classList.add(mode === 'dark' ? darkClass : mode === 'light' ? lightClass : colorClass);
-    if (persist) { storedMode = mode; write(modeKey, mode); }
-    var label = modeLabel(mode);
-    menuToggle.setAttribute('aria-label', label);
-    menuToggle.setAttribute('title', label);
-    menuToggle.innerHTML = mode === 'dark'
-      ? '<svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><span class="sr-only">'+label+'</span>'
-      : mode === 'light'
-        ? '<svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path></svg><span class="sr-only">'+label+'</span>'
-        : '<svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"></path></svg><span class="sr-only">'+label+'</span>';
-
+    switcher.setAttribute('data-mode', mode);
+    options.forEach(function(option) {
+      option.setAttribute('aria-pressed', option.getAttribute('data-theme-mode') === mode ? 'true' : 'false');
+    });
+    if (persist) write(modeKey, mode);
     var giscusFrame = document.querySelector('iframe.giscus-frame');
     if (giscusFrame && giscusFrame.contentWindow) {
       giscusFrame.contentWindow.postMessage({ giscus: { setConfig: { theme: mode === 'dark' ? 'dark' : 'light' } } }, 'https://giscus.app');
     }
   }
-
-  menuToggle.addEventListener('click', function() { applyTheme(nextMode(currentMode()), true); });
-  storedMode = read(modeKey, modes);
-  applyTheme(storedMode || 'color', false);
-  window.__toggleMode = function() { applyTheme(nextMode(currentMode()), true); };
+  options.forEach(function(option) {
+    option.addEventListener('click', function() { applyTheme(option.getAttribute('data-theme-mode'), true); });
+  });
+  applyTheme(read(modeKey) || 'color', false);
+  window.__toggleMode = function() { applyTheme(modes[(modes.indexOf(currentMode()) + 1) % modes.length], true); };
 })(document);
 
 (function(document) {

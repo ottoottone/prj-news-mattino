@@ -407,3 +407,20 @@ body { background:#f7f7f5; color:#202b35; }
 /* Final mode treatment: only Color uses multicolor bars. */
 .theme-nord-dark .content-first-header:after, .theme-nord-dark .briefing-issue-header:after, .theme-nord-dark .briefing-item h2:before, .theme-nord-dark .sidebar:before, .theme-nord-light .content-first-header:after, .theme-nord-light .briefing-issue-header:after, .theme-nord-light .briefing-item h2:before, .theme-nord-light .sidebar:before, .theme-nord-dark .masthead-wordmark::after, .theme-nord-light .masthead-wordmark::after { background:var(--neon-pink); }
 .theme-nord-color .content-first-header:after, .theme-nord-color .briefing-issue-header:after, .theme-nord-color .briefing-item h2:before, .theme-nord-color .sidebar:before, .theme-nord-color .masthead-wordmark::after { background:linear-gradient(90deg,var(--neon-pink) 0 34%,var(--neon-violet) 34% 67%,var(--neon-sun) 67%); }
+
+/* Visible three-state theme slider. */
+.theme-nord-color .masthead-wordmark, .theme-nord-color .masthead-byline { color:#fff; }
+.theme-switcher { --slider-index:0; position:relative; display:grid; grid-template-columns:repeat(3,1fr); width:9.6rem; height:2rem; padding:2px; background:var(--neon-plum); border:1px solid var(--neon-violet); border-radius:999px; isolation:isolate; }
+.theme-switcher::before { content:""; position:absolute; z-index:-1; top:2px; bottom:2px; left:2px; width:calc((100% - 4px) / 3); border-radius:999px; background:var(--neon-pink); transform:translateX(calc(var(--slider-index) * 100%)); transition:transform .2s ease, background .2s ease; }
+.theme-switcher[data-mode="color"] { --slider-index:0; }
+.theme-switcher[data-mode="dark"] { --slider-index:1; }
+.theme-switcher[data-mode="light"] { --slider-index:2; }
+.theme-option { appearance:none; border:0; background:transparent; color:#fff9ff; border-radius:999px; padding:0 .25rem; font:800 .58rem/1 Rubik,Arial,sans-serif; letter-spacing:.02em; cursor:pointer; }
+.theme-option[aria-pressed="true"] { color:#21172f; }
+.theme-option:focus-visible { outline:2px solid var(--neon-sun); outline-offset:2px; }
+.theme-nord-light .theme-switcher { background:#fff; border-color:#6240d5; }
+.theme-nord-light .theme-option { color:#5a36c5; }
+.theme-nord-light .theme-option[aria-pressed="true"] { color:#21172f; }
+.theme-nord-dark .theme-option { color:#fff9ff; }
+.theme-nord-color .theme-switcher { border-color:var(--neon-pink); }
+@media (max-width:700px) { .theme-switcher { width:7.4rem; height:1.8rem; } .theme-option { font-size:.5rem; } }

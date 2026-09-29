@@ -25,10 +25,11 @@
             </h3>
             <div class="masthead-actions">
               <div class="theme-menu">
-                  <button id="theme-menu-toggle" class="icon-button theme-menu-toggle" type="button" aria-label="Passa al tema scuro" title="Passa al tema scuro">
-                  <svg class="theme-toggle-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5 8.5 8.5 0 1 0 20.5 14.5Z"></path></svg>
-                  <span class="sr-only">Passa al tema scuro</span>
-                </button>
+                <div id="theme-switcher" class="theme-switcher" role="group" aria-label="Tema" data-mode="color">
+                  <button class="theme-option" type="button" data-theme-mode="color" aria-pressed="true" title="Tema colorato">Colore</button>
+                  <button class="theme-option" type="button" data-theme-mode="dark" aria-pressed="false" title="Tema scuro">Scuro</button>
+                  <button class="theme-option" type="button" data-theme-mode="light" aria-pressed="false" title="Tema chiaro">Chiaro</button>
+                </div>
               </div>
             </div>
           </div>
