@@ -381,3 +381,10 @@ body { background:#f7f7f5; color:#202b35; }
 .source-line { border-top:0; padding:.3rem 0; }
 .sources-section, .watch-today { border-top:0; }
 .briefing-item, .briefing-item:first-of-type { border-top:0; }
+
+/* Source rows are three aligned columns: access, language, source title. */
+.source-line { grid-template-columns:3.6rem 3.6rem minmax(0,1fr); gap:.55rem; border-top:0; align-items:center; }
+.source-line a { display:contents; }
+.source-line .source-lang { grid-column:2; grid-row:1; }
+.source-line .source-title { grid-column:3; grid-row:1; min-width:0; }
+@media (max-width:800px) { .source-line { grid-template-columns:3.6rem 3.6rem minmax(0,1fr); gap:.45rem; } }
