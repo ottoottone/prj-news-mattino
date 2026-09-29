@@ -470,6 +470,25 @@ body { background:#f7f7f5; color:#202b35; }
 .kit-form-note { margin:.55rem 0 0; color:var(--muted); font-size:.72rem; }
 @media (max-width:600px) { .kit-form-row { display:grid; } .kit-form button { width:100%; } }
 
+/* Compact Kit signup bar above the masthead, using the site's stripe language. */
+.newsletter-signup-bar { position:relative; overflow:hidden; background:var(--neon-plum); color:#fff9ff; }
+.newsletter-signup-bar::before { content:""; position:absolute; inset:0 auto 0 0; width:100%; background:linear-gradient(90deg,var(--neon-pink) 0 34%,var(--neon-violet) 34% 67%,var(--neon-sun) 67%); opacity:.95; }
+.newsletter-signup-inner { position:relative; display:flex; align-items:center; justify-content:flex-end; gap:.8rem; min-height:2.65rem; padding-top:.3rem; padding-bottom:.3rem; }
+.newsletter-signup-label { margin-right:auto; font:800 .68rem/1 Rubik,Arial,sans-serif; letter-spacing:.08em; text-transform:uppercase; }
+.newsletter-signup-form { display:flex; align-items:center; gap:.4rem; }
+.newsletter-signup-form input { width:12rem; padding:.43rem .6rem; border:1px solid rgba(255,255,255,.7); border-radius:.4rem; background:rgba(37,24,72,.86); color:#fff9ff; font:500 .72rem/1 Inter,Arial,sans-serif; }
+.newsletter-signup-form input::placeholder { color:#f6dceb; }
+.newsletter-signup-form input:focus { outline:2px solid #fff9ff; outline-offset:2px; }
+.newsletter-signup-form button { padding:.46rem .7rem; border:1px solid #fff9ff; border-radius:.4rem; background:#fff9ff; color:var(--neon-plum); cursor:pointer; font:800 .68rem/1 Rubik,Arial,sans-serif; }
+.newsletter-signup-form button:hover { background:var(--neon-sun); border-color:var(--neon-sun); }
+.theme-nord-light .newsletter-signup-bar { background:var(--neon-oat); color:var(--neon-ink); border-bottom:1px solid #d6cadf; }
+.theme-nord-light .newsletter-signup-bar::before { background:var(--neon-pink); opacity:1; }
+.theme-nord-light .newsletter-signup-form input { background:#fff; color:var(--neon-ink); border-color:#6240d5; }
+.theme-nord-light .newsletter-signup-form input::placeholder { color:#6f6378; }
+.theme-nord-light .newsletter-signup-form button { background:var(--neon-pink); border-color:var(--neon-pink); color:#21172f; }
+.theme-nord-dark .newsletter-signup-bar::before { background:var(--neon-pink); opacity:1; }
+@media (max-width:600px) { .newsletter-signup-inner { justify-content:stretch; gap:.5rem; } .newsletter-signup-label { font-size:.58rem; } .newsletter-signup-form { flex:1; } .newsletter-signup-form input { width:auto; flex:1; min-width:0; } .newsletter-signup-form button { white-space:nowrap; } }
+
  /* Color mode contrast: headings stay white; links use the pink/yellow line palette. */
 .theme-nord-color .content-first-header h1,
 .theme-nord-color .newsletter-issue-header h1,

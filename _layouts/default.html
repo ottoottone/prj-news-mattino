@@ -4,6 +4,19 @@
   {% include head.html %}
 
   <body>
+    {% if site.newsletter_cta.kit_form_id %}
+    <div class="newsletter-signup-bar" role="region" aria-label="Iscriviti al briefing">
+      <div class="newsletter-signup-inner container">
+        <span class="newsletter-signup-label">Ricevi il briefing</span>
+        <form class="newsletter-signup-form" action="https://app.kit.com/forms/{{ site.newsletter_cta.kit_form_id }}/subscriptions" method="post">
+          <label class="sr-only" for="kit-email-topbar">La tua email</label>
+          <input id="kit-email-topbar" type="email" name="email_address" autocomplete="email" placeholder="nome@esempio.it" required>
+          <button type="submit">Iscriviti →</button>
+        </form>
+      </div>
+    </div>
+    {% endif %}
+
     <a class="skip-link" href="#main-content">Vai al contenuto</a>
 
     <input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox" aria-label="Apri il menu di navigazione">
