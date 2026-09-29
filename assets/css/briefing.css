@@ -375,3 +375,9 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .source-lang { background:var(--neon-violet); color:#fff9ff; border-color:var(--neon-violet); }
 .masthead-mark { filter:none; }
 .more-to-know summary::before { background:linear-gradient(160deg,#ff9ac0 0%,#ff4f87 72%); }
+
+/* Final alignment: equal compact source markers and no plain separator rules. */
+.source-access, .source-lang { width:3.6rem; min-width:3.6rem; height:1.4rem; }
+.source-line { border-top:0; padding:.3rem 0; }
+.sources-section, .watch-today { border-top:0; }
+.briefing-item, .briefing-item:first-of-type { border-top:0; }
