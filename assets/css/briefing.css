@@ -345,6 +345,16 @@ body { background:#f7f7f5; color:#202b35; }
 .source-access.paywall { background:var(--neon-pink); color:#21172f; border-color:var(--neon-pink); }
 .source-access.official { background:var(--neon-violet); color:#fff9ff; border-color:var(--neon-violet); }
 .theme-nord-light .source-lang { background:#6240d5; color:#fff; border-color:#6240d5; }
+
+/* Three theme modes: Color keeps the multicolor bars; Dark and Light use solid pink bars. */
+.theme-nord-color { color-scheme:dark; --bg:#251848; --bg-alt:#30205a; --surface:#35215f; --surface-strong:#40266e; --border:#694e96; --text:#f3eaff; --text-strong:#fff9ff; --muted:#d0c0e2; --link:#d7caff; --accent:var(--neon-violet); --accent-warm:var(--neon-pink); --briefing-ink:#fff9ff; --briefing-paper:#251848; --briefing-blue:#c7b9ff; --briefing-line:#694e96; }
+.theme-nord-color body { background:var(--bg); color:var(--text); }
+.theme-nord-color .masthead { background:color-mix(in srgb,var(--bg) 94%,transparent); }
+.theme-nord-color .briefing-summary { background:var(--surface-strong); color:var(--text); }
+.theme-nord-color .latest-briefing { background:#20123b; }
+.theme-nord-color .sidebar { background:#20123b; }
+.theme-nord-dark .content-first-header:after, .theme-nord-dark .briefing-issue-header:after, .theme-nord-dark .briefing-item h2:before, .theme-nord-dark .sidebar:before, .theme-nord-light .content-first-header:after, .theme-nord-light .briefing-issue-header:after, .theme-nord-light .briefing-item h2:before, .theme-nord-light .sidebar:before { background:var(--neon-pink); }
+.theme-nord-dark .masthead-wordmark::after, .theme-nord-light .masthead-wordmark::after { background:var(--neon-pink); }
 .theme-nord-light .source-access.free { background:#e7cf35; color:#21172f; border-color:#e7cf35; }
 .theme-nord-light .source-access.paywall { background:#ff9ac0; color:#21172f; border-color:#ff9ac0; }
 .theme-nord-light .source-access.official { background:#9b84ed; color:#21172f; border-color:#9b84ed; }
@@ -393,3 +403,7 @@ body { background:#f7f7f5; color:#202b35; }
 .source-line { grid-template-columns:1.4rem 1.4rem minmax(0,1fr); }
 .briefing-item { border-bottom:0; }
 @media (max-width:800px) { .source-line { grid-template-columns:1.4rem 1.4rem minmax(0,1fr); } }
+
+/* Final mode treatment: only Color uses multicolor bars. */
+.theme-nord-dark .content-first-header:after, .theme-nord-dark .briefing-issue-header:after, .theme-nord-dark .briefing-item h2:before, .theme-nord-dark .sidebar:before, .theme-nord-light .content-first-header:after, .theme-nord-light .briefing-issue-header:after, .theme-nord-light .briefing-item h2:before, .theme-nord-light .sidebar:before, .theme-nord-dark .masthead-wordmark::after, .theme-nord-light .masthead-wordmark::after { background:var(--neon-pink); }
+.theme-nord-color .content-first-header:after, .theme-nord-color .briefing-issue-header:after, .theme-nord-color .briefing-item h2:before, .theme-nord-color .sidebar:before, .theme-nord-color .masthead-wordmark::after { background:linear-gradient(90deg,var(--neon-pink) 0 34%,var(--neon-violet) 34% 67%,var(--neon-sun) 67%); }

@@ -25,11 +25,12 @@
       var storageKey = 'theme';
       var lightClass = 'theme-nord-light';
       var darkClass = 'theme-nord-dark';
+      var colorClass = 'theme-nord-color';
       var root = document.documentElement;
       var saved = null;
 
       function normalizeTheme(value) {
-        return value === 'dark' || value === 'light' ? value : null;
+        return value === 'color' || value === 'dark' || value === 'light' ? value : null;
       }
 
       try {
@@ -39,19 +40,11 @@
       }
 
       if (!saved) {
-        try {
-          if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-            saved = 'dark';
-          } else {
-            saved = 'dark';
-          }
-        } catch (e) {
-          saved = 'dark';
-        }
+        saved = 'color';
       }
 
-      root.classList.remove(lightClass, darkClass);
-      root.classList.add(saved === 'dark' ? darkClass : lightClass);
+      root.classList.remove(lightClass, darkClass, colorClass);
+      root.classList.add(saved === 'dark' ? darkClass : saved === 'light' ? lightClass : colorClass);
     })();
   </script>
 
