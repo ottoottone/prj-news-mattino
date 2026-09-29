@@ -424,3 +424,26 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .theme-option { color:#fff9ff; }
 .theme-nord-color .theme-switcher { border-color:var(--neon-pink); }
 @media (max-width:700px) { .theme-switcher { width:7.4rem; height:1.8rem; } .theme-option { font-size:.5rem; } }
+
+/* Color mode contrast: headings stay white; links use the pink/yellow line palette. */
+.theme-nord-color .content-first-header h1,
+.theme-nord-color .newsletter-issue-header h1,
+.theme-nord-color .briefing-item-title h2,
+.theme-nord-color .briefing-issue-header h1,
+.theme-nord-color .briefing-section h2,
+.theme-nord-color .watch-today h2,
+.theme-nord-color .sources-section h2 { color:#fff9ff; }
+.theme-nord-color .topic-label,
+.theme-nord-color .newsletter-kicker,
+.theme-nord-color .briefing-hero-kicker,
+.theme-nord-color .eyebrow { color:var(--neon-sun); }
+.theme-nord-color .inline-source,
+.theme-nord-color .source-line a,
+.theme-nord-color .source-title,
+.theme-nord-color .briefing-image figcaption a,
+.theme-nord-color .more-to-know a { color:#ff9ac0; }
+.theme-nord-color .content-first-deck,
+.theme-nord-color .briefing-item-body p,
+.theme-nord-color .watch-today li,
+.theme-nord-color .watch-note,
+.theme-nord-color .briefing-facts span { color:#f3eaff; }
