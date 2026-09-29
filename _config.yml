@@ -50,6 +50,7 @@ newsletter_cta:
   lede: Ricevi una sintesi essenziale della Germania, in italiano.
   path: /newsletter/
   feed_path: /feed.xml
+  kit_form_id: 9979368
   footer_blurb: Un briefing chiaro, utile e documentato per iniziare la giornata.
 
 search:

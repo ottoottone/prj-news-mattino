@@ -460,7 +460,17 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .theme-switcher, .theme-nord-color .theme-switcher { background:var(--neon-plum); }
 .source-access, .source-lang { border-radius:.32rem; }
 
-/* Color mode contrast: headings stay white; links use the pink/yellow line palette. */
+.kit-form { margin-top:1.15rem; }
+.kit-form label { display:block; margin-bottom:.35rem; color:var(--text-strong); font-size:.78rem; font-weight:800; }
+.kit-form-row { display:flex; gap:.55rem; }
+.kit-form input { min-width:0; flex:1; padding:.72rem .8rem; border:1px solid var(--border); border-radius:.45rem; background:var(--bg-alt); color:var(--text-strong); font:inherit; }
+.kit-form input:focus { outline:2px solid var(--accent-warm); outline-offset:2px; }
+.kit-form button { flex:0 0 auto; padding:.72rem .9rem; border:1px solid var(--neon-pink); border-radius:.45rem; background:var(--neon-pink); color:#21172f; cursor:pointer; font:800 .78rem/1 Rubik,Arial,sans-serif; }
+.kit-form button:hover { background:var(--neon-sun); border-color:var(--neon-sun); }
+.kit-form-note { margin:.55rem 0 0; color:var(--muted); font-size:.72rem; }
+@media (max-width:600px) { .kit-form-row { display:grid; } .kit-form button { width:100%; } }
+
+ /* Color mode contrast: headings stay white; links use the pink/yellow line palette. */
 .theme-nord-color .content-first-header h1,
 .theme-nord-color .newsletter-issue-header h1,
 .theme-nord-color .briefing-item-title h2,
