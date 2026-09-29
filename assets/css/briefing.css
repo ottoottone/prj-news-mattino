@@ -447,3 +447,10 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-color .watch-today li,
 .theme-nord-color .watch-note,
 .theme-nord-color .briefing-facts span { color:#f3eaff; }
+
+/* Every content link follows the same visible pink/yellow line palette. */
+.theme-nord-color .content a,
+.theme-nord-color .site-footer a { color:#ff9ac0; }
+.theme-nord-color .content a:hover,
+.theme-nord-color .site-footer a:hover { color:var(--neon-sun); }
+.theme-nord-color .content .text-link { color:var(--neon-sun); }
