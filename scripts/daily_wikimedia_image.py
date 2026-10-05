@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import re
+import shutil
 import sys
 from pathlib import Path
 from urllib.parse import urlencode
@@ -109,8 +110,31 @@ def main() -> int:
     parser.add_argument("--output-dir", default="assets/images/briefing/daily")
     args = parser.parse_args()
     try:
-        selected = choose_file(args.subject)
-        image = download(selected["download_url"])
+        try:
+            selected = choose_file(args.subject)
+            image = download(selected["download_url"])
+            selected["selection_mode"] = "subject"
+        except Exception as primary_error:
+            # Wikimedia can rate-limit a precise search. Use a bundled, already
+            # verified Wikimedia Germany fallback rather than failing the edition.
+            fallback = Path("assets/images/briefing/fallback-germany-dot-field.webp")
+            if not fallback.is_file():
+                raise primary_error
+            output = Path(args.output_dir) / f"{args.date}-{slug(args.subject)}-dot-field.webp"
+            output.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(fallback, output)
+            print(json.dumps({
+                "title": "File:Potsdam Tag der Deutschen Einheit 2020-001.jpg",
+                "page_url": "https://commons.wikimedia.org/wiki/File:Potsdam_Tag_der_Deutschen_Einheit_2020-001.jpg",
+                "original_url": "https://commons.wikimedia.org/wiki/File:Potsdam_Tag_der_Deutschen_Einheit_2020-001.jpg",
+                "author": "Fridolin freudenfett",
+                "license": "CC BY-SA 4.0",
+                "output_path": str(output),
+                "subject_query": args.subject,
+                "selection_mode": "generic-germany-fallback",
+                "fallback_reason": str(primary_error),
+            }, ensure_ascii=False))
+            return 0
         output = Path(args.output_dir) / f"{args.date}-{slug(args.subject)}-dot-field.webp"
         render_dot_field(image, output)
         selected["output_path"] = str(output)
