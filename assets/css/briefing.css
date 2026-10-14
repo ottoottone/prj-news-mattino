@@ -526,3 +526,10 @@ body { background:#f7f7f5; color:#202b35; }
 /* Slightly lift the secondary links in “Per saperne di più”. */
 .theme-nord-color .more-to-know a { color:#ffb3ce; }
 .theme-nord-color .more-to-know a:hover { color:var(--neon-sun); }
+
+/* Final source badge override: the original F icon, now acid green. */
+.source-access.free { font-size:.72rem; background:#dfff3f; color:#253300; border-color:#b7d900; }
+.source-access.free::before { content:none; }
+.theme-nord-light .source-access.free,
+.theme-nord-color .source-access.free { background:#dfff3f; color:#253300; border-color:#b7d900; }
+.theme-nord-dark .source-access.free { background:#b7d900; color:#172000; border-color:#dfff3f; }
