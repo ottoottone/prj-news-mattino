@@ -1,6 +1,6 @@
-# Germania, in breve
+# un minuto
 
-Sito Jekyll in italiano per il briefing mattutino sulla Germania.
+*Germania, in breve.* Sito Jekyll in italiano per il briefing mattutino sulla Germania.
 
 ## Stato
 

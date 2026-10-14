@@ -1,5 +1,6 @@
-title: Germania, in breve
-description: Una sintesi chiara e documentata delle notizie più importanti dalla Germania.
+title: un minuto
+tagline: Germania, in breve
+description: "Germania, in breve: una sintesi chiara e documentata delle notizie più importanti."
 url: https://ottoottone.github.io/prj-news-mattino
 baseurl: /prj-news-mattino
 lang: it-IT
@@ -10,6 +11,7 @@ exclude:
   - lib
   - notes
   - Gemfile.lock
+  - jekyll-theme-nord-newsletter.gemspec
 
 theme: jekyll-theme-nord-newsletter
 paginate: 8
@@ -31,7 +33,7 @@ defaults:
     values: { layout: newsletter, lang: it }
 
 author:
-  name: Germania, in breve
+  name: un minuto
   email: briefing@example.com
   avatar: /assets/favicon.svg
 

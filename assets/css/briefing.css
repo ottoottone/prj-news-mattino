@@ -1,4 +1,4 @@
-/* Germania, in breve — editorial layer over Nord Newsletter */
+/* un minuto — editorial layer over Nord Newsletter */
 :root { --briefing-ink:#17202a; --briefing-paper:#fbfaf7; --briefing-blue:#2161a8; --briefing-coral:#e86452; --briefing-yellow:#f4c95d; --briefing-mint:#dcefe9; --briefing-line:#d9dfe5; --briefing-radius:20px; }
 .theme-nord-light { --bg:var(--briefing-paper); --bg-alt:#f2f5f6; --surface:#fff; --surface-strong:#f1f5f7; --border:var(--briefing-line); --text:#536170; --text-strong:var(--briefing-ink); --muted:#6c7885; --link:var(--briefing-blue); --link-hover:#123b69; --accent:var(--briefing-blue); --accent-warm:var(--briefing-coral); --footer-bg:#eef2f3; }
 .theme-nord-dark { --briefing-ink:#f4f7f8; --briefing-paper:#202832; --briefing-blue:#9bcfff; --briefing-coral:#ff9c8c; --briefing-yellow:#f6d77a; --briefing-mint:#2d4249; --briefing-line:#465462; }

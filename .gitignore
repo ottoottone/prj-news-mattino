@@ -5,3 +5,5 @@ vendor/
 .sass-cache/
 .newsletter-state/
 notes/
+scripts/__pycache__/
+tests/__pycache__/
