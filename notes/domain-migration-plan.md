@@ -22,7 +22,7 @@ Passare dall'URL tecnico `https://ottoottone.github.io/prj-news-mattino/` al dom
 
 `unminuto.news` è il candidato da trattare come dominio principale: è breve, corrisponde esattamente al nome e comunica una testata/briefing. La lingua e il focus sono chiariti dal sottotitolo, non dal dominio.
 
-La verifica automatica non è una prenotazione: il DNS non restituisce record A, mentre RDAP pubblico per `.news` ha risposto con un blocco `403`. Occorre quindi verificarne l'acquistabilità nel carrello di un registrar prima di qualsiasi annuncio o modifica tecnica.
+La verifica presso l'endpoint RDAP ufficiale del registry `.news` (`rdap.identitydigital.services`) ha restituito `404 Object not found` il 14 ottobre 2026: `unminuto.news` risulta **non registrato al momento del controllo**. Il DNS non restituisce record A. Non è comunque una prenotazione: va acquistato nel carrello di un registrar prima di qualsiasi annuncio o modifica tecnica.
 
 ### Alternative da verificare solo se la prima scelta non è acquistabile
 
