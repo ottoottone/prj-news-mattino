@@ -234,6 +234,11 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-dark .more-to-know summary, .theme-nord-dark .more-to-know a { color:#9bd3ff; }
 @media (max-width:600px) { .more-to-know ul { display:grid; gap:.45rem; } }
 
+/* Source affordances: free access is a quiet green check, not another letter badge. */
+.source-access.free { font-size:0; background:#e3f4e9; color:#167044; border-color:#9bd2ad; }
+.source-access.free::before { content:"✓"; font-size:.82rem; line-height:1; }
+.theme-nord-dark .source-access.free { background:#173d2b; color:#bdf3cd; border-color:#4a9e6b; }
+
 /* Rhine Window identity: water as a precise, responsive brand mark. */
 :root { --rhine-navy:#102a43; --rhine-blue:#2868c7; --rhine-light:#72d5f2; --rhine-yellow:#e7ef61; }
 .masthead-title { display:flex; align-items:center; gap:.75rem; }

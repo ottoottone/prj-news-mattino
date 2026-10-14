@@ -82,6 +82,60 @@
     });
   </script>
 
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var germanHosts = [
+        'tagesschau.de', 'deutschlandfunk.de', 'zeit.de', 'faz.net',
+        'handelsblatt.com', 'sueddeutsche.de', 'dw.com', 'bundesregierung.de'
+      ];
+
+      function isGermanHost(hostname) {
+        return germanHosts.some(function (host) {
+          return hostname === host || hostname.slice(-(host.length + 1)) === '.' + host;
+        });
+      }
+
+      function translateUrl(rawUrl) {
+        var url;
+        try {
+          url = new URL(rawUrl);
+        } catch (error) {
+          return rawUrl;
+        }
+
+        if (url.protocol !== 'https:' && url.protocol !== 'http:') return rawUrl;
+        if (url.hostname.endsWith('.translate.goog')) return rawUrl;
+
+        var translated = new URL(
+          'https://' + url.hostname.replace(/\./g, '-') + '.translate.goog' + url.pathname
+        );
+        url.searchParams.forEach(function (value, key) {
+          translated.searchParams.set(key, value);
+        });
+        translated.searchParams.set('_x_tr_sl', 'de');
+        translated.searchParams.set('_x_tr_tl', 'it');
+        translated.searchParams.set('_x_tr_hl', 'it');
+        translated.hash = url.hash;
+        return translated.toString();
+      }
+
+      document.querySelectorAll('.source-line a, .inline-source').forEach(function (link) {
+        var originalUrl = link.getAttribute('href');
+        if (!originalUrl) return;
+
+        var markedGerman = link.querySelector('.source-lang') &&
+          link.querySelector('.source-lang').textContent.trim().toUpperCase() === 'D';
+        var parsed;
+        try { parsed = new URL(originalUrl, window.location.href); } catch (error) { return; }
+
+        if (markedGerman || isGermanHost(parsed.hostname)) {
+          link.setAttribute('href', translateUrl(parsed.href));
+          link.setAttribute('data-original-url', parsed.href);
+        }
+      });
+    });
+  </script>
+
   {% if site.google_analytics_id %}
  <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics_id }}"></script>
