@@ -502,6 +502,7 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-color .briefing-section h2,
 .theme-nord-color .watch-today h2,
 .theme-nord-color .sources-section h2 { color:#fff9ff; }
+.theme-nord-color .newsletter-issue-header { background:#20123b; border-color:#694e96; }
 .theme-nord-color .topic-label,
 .theme-nord-color .newsletter-kicker,
 .theme-nord-color .briefing-hero-kicker,
