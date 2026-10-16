@@ -542,3 +542,11 @@ body { background:#f7f7f5; color:#202b35; }
 .theme-nord-light .source-access.free,
 .theme-nord-color .source-access.free { background:#dfff3f; color:#253300; border-color:#b7d900; }
 .theme-nord-dark .source-access.free { background:#b7d900; color:#172000; border-color:#dfff3f; }
+
+/* Desktop editorial measure: a single centered reading column prevents the homepage from drifting left on wide screens. */
+@media (min-width:801px) {
+  .content-first-header { grid-template-columns:minmax(0,1fr); max-width:900px; margin-inline:auto; gap:0; }
+  .content-first-header h1 { max-width:900px; }
+  .homepage-briefing, .compact-archive { max-width:900px; margin-left:auto; margin-right:auto; }
+  .homepage-briefing { padding-top:2.5rem; }
+}
