@@ -550,6 +550,7 @@ body { background:#f7f7f5; color:#202b35; }
   .homepage-briefing, .compact-archive { max-width:900px; margin-left:auto; margin-right:auto; }
   .homepage-briefing { padding-top:1.35rem; }
   .briefing-item-title, .briefing-item-body p { max-width:none; }
+  .briefing-image--daily { display:none; }
 }
 
 /* The desktop masthead is navigation, not a hero: keep brand and controls on one compact line. */
