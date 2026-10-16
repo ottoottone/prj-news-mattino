@@ -1,8 +1,8 @@
 title: un minuto
 tagline: Germania, in breve
 description: "Germania, in breve: una sintesi chiara e documentata delle notizie più importanti."
-url: https://ottoottone.github.io
-baseurl: /prj-news-mattino
+url: https://unminuto.github.io
+baseurl: /website
 lang: it-IT
 locale: it_IT
 exclude:
