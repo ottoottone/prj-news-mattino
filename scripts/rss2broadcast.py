@@ -107,7 +107,7 @@ def _save_state(path: Path, guid: str) -> None:
 
 def main(argv: list[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Create a Kit broadcast from the latest Jekyll RSS item")
-    parser.add_argument("--feed-url", default=os.environ.get("RSS_FEED_URL", "https://ottoottone.github.io/prj-news-mattino/feed.xml"))
+    parser.add_argument("--feed-url", default=os.environ.get("RSS_FEED_URL", "https://unminuto.github.io/feed.xml"))
     parser.add_argument("--send-at", default=os.environ.get("KIT_SEND_AT"))
     parser.add_argument("--state-file", default=os.environ.get("RSS2BROADCAST_STATE", ".newsletter-state/kit-rss2broadcast.json"))
     parser.add_argument("--dry-run", action="store_true")

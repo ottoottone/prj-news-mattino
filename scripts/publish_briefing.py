@@ -11,8 +11,8 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-REPO = "ottoottone/prj-news-mattino"
-SITE = "https://ottoottone.github.io/prj-news-mattino"
+REPO = "unminuto/unminuto.github.io"
+SITE = "https://unminuto.github.io"
 
 
 def run(*args: str, check: bool = True, cwd: Path = ROOT, capture: bool = True) -> str:
