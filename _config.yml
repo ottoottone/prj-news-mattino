@@ -2,7 +2,7 @@ title: un minuto
 tagline: Germania, in breve
 description: "Germania, in breve: una sintesi chiara e documentata delle notizie più importanti."
 url: https://unminuto.github.io
-baseurl: /website
+baseurl: ""
 lang: it-IT
 locale: it_IT
 exclude:
