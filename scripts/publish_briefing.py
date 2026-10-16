@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import subprocess
 import sys
 import time
@@ -36,6 +37,19 @@ def main() -> int:
         raise RuntimeError(f"missing edition: {edition}")
     if not image.is_file():
         raise RuntimeError(f"missing image: {image}")
+    date_match = re.match(r"(\d{4}-\d{2}-\d{2})-", edition.name)
+    if not date_match:
+        raise RuntimeError(f"edition filename must start with YYYY-MM-DD: {edition.name}")
+    edition_day = date_match.group(1)
+    duplicates = sorted(
+        candidate for candidate in (ROOT / "collections" / "_newsletter").glob(f"{edition_day}-*.md")
+        if candidate.resolve() != edition.resolve()
+    )
+    if duplicates:
+        raise RuntimeError(
+            f"an edition already exists for {edition_day}: "
+            + ", ".join(candidate.name for candidate in duplicates)
+        )
     text = edition.read_text(encoding="utf-8")
     marker = '<figure class="briefing-image briefing-image--daily">'
     summary = text.find('<div class="briefing-summary">')
