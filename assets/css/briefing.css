@@ -553,11 +553,14 @@ body { background:#f7f7f5; color:#202b35; }
 
 /* The desktop masthead is navigation, not a hero: keep brand and controls on one compact line. */
 @media (min-width:701px) {
-  .newsletter-signup-inner { min-height:2.5rem; padding-top:.3rem; padding-bottom:.3rem; }
-  .masthead { padding:.5rem 0; margin-bottom:1.15rem; }
-  .masthead-inner { min-height:3.75rem; }
+  .newsletter-signup-inner { min-height:2.2rem; padding-top:.2rem; padding-bottom:.2rem; }
+  .newsletter-signup-form input { padding:.42rem .7rem; }
+  .newsletter-signup-form button { padding:.43rem .75rem; }
+  .masthead { padding:.25rem 0; margin-bottom:.55rem; }
+  .masthead-inner { min-height:3.1rem; }
   .masthead-title { flex-direction:row; align-items:center; gap:.65rem; }
   .masthead-mark { width:1.35rem; height:1.65rem; }
   .masthead-wordmark { font-size:1.38rem; }
   .masthead-byline { margin:0; padding-left:.65rem; border-left:1px solid var(--border); }
+  .content { padding-top:2rem; }
 }
